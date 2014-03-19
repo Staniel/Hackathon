@@ -1,4 +1,3 @@
-# -*- coding: cp936 -*-
 AQ_device_host="10.16.44.83"
 AQ_device_port=3000
 AQ_device_request="000000000006010300000014"
@@ -43,7 +42,6 @@ def AQ():
     for i in range(10):          
         print "Sensor[%d]: Raw Data: %s  Result: [%s] %0.6f %s"%(i,hexlify(responseRaw[9+i*4:13+i*4]),sensorMap[i][0],sensorValue[i],sensorMap[i][1])       
     return sensorRes;
-
 ##sensor0              CO	            0-50PPM	      50*£¨D1-400 £©/1600		
 ##sensor1	H2S	            0-2ppm	      2*£¨D2-400 £©/1600		
 ##sensor2	NH3	            0-50PPM          2*£¨D3-400 £©/1600		 
