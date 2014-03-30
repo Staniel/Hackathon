@@ -53,15 +53,24 @@ class AQdevice:
         else:
             print "[Error]: Response length illegal."        
             return -1;
+##        print hexlify(self.responseRaw)
         sensorValue=unpack("!"+str(len(self.sensor_map))+"f",self.responseRaw[len(self.response_head)/2:])   
         for sensor_id in range(len(self.sensor_map)):        
             if(sensorValue[sensor_id]>=self.sensor_map[sensor_id][2] and sensorValue[sensor_id]<=self.sensor_map[sensor_id][3]):
                 self.sensorRes[self.sensor_map[sensor_id][0]]=sensorValue[sensor_id]
+        ####Convert
+        self.sensorRes["CO"]=self.sensorRes["CO"]*26/22.4
+        self.sensorRes["SO2"]=self.sensorRes["SO2"]*64/22.4
+        self.sensorRes["O3"]=self.sensorRes["O3"]*48/22.4
+        self.sensorRes["NO2"]=self.sensorRes["NO2"]*46/22.4
+        self.sensorRes["PM2.5"]=self.sensorRes["PM2.5"]*1000       
+        
+        ####Convert end
         if(detail_enable):
             print "--------------------------------------------------------"
             print "|ID | Type        | Value                   | Raw      |"
             print "--------------------------------------------------------"
             for i in range(len(self.sensor_map)):          
-                print "| %d | %s | %s | %s |"%(i,self.sensor_map[i][0].ljust(11),(str(sensorValue[i])+" "+self.sensor_map[i][1]).ljust(23),hexlify(self.responseRaw[len(self.response_head)/2+i*4:len(self.response_head)/2+4+i*4]))       
+                print "| %d | %s | %s | %s |"%(i,self.sensor_map[i][0].ljust(11),(str(self.sensorRes[self.sensor_map[i][0]])+" "+self.sensor_map[i][1]).ljust(23),hexlify(self.responseRaw[len(self.response_head)/2+i*4:len(self.response_head)/2+4+i*4]))       
             print "--------------------------------------------------------"
         return self.sensorRes
