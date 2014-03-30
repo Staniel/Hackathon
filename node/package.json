@@ -1,0 +1,13 @@
+{
+    "name": "airapi" ,
+    "version": "0.0.1" ,
+    "private": true ,
+    "dependencies":
+    {
+        "express": "2.5.8" ,
+        "restify" : ">= 2.7.0",
+        "ejs": ">= 0.0.1",
+        "mongodb": ">= 0.9.9",
+        "mongojs": ">= 0.0.1"
+    }
+}
