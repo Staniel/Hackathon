@@ -12,7 +12,7 @@ import json
 import urllib,urllib2
 
 try:
-    logFile = open("aq.log", 'a')
+    logFile = open("/home/ubuntu/cron/aq.log", 'a')
     logFile.write(datetime.datetime.fromtimestamp(time.time()).strftime("\n----%Y-%m-%d %H:%M:%S----\n"))
     dev=device_module.AQdevice(my_device_host,my_device_request,my_device_response_head,my_device_sensorMap)
          
@@ -33,16 +33,19 @@ try:
     postData = urllib.urlencode(postDict);
     req = urllib2.Request(POST_URL, postData);
     req.add_header('Content-Type', "application/x-www-form-urlencoded")
-    resp = urllib2.urlopen(req)       
+    resp = urllib2.urlopen(req,timeout=10)    
     logFile.write("Response:"+resp.read()+"\n")
     print resp.read()
-
+    
+    
 except Exception as err:
     print err
     logFile.write(str(err)+"\n")
 finally:
     dev.disconnect()
     logFile.close()
+    resp.close()
+    
         
 ##sensor0       CO	            0-50PPM	      50*(D1-400 )/1600		
 ##sensor1	H2S	            0-2ppm	      2*(D2-400 )/1600		
