@@ -1,4 +1,5 @@
-# -*- coding: utf-8 -*-  
+# -*- coding: utf-8 -*-
+# Python 2.7
 import httplib
 from binascii import hexlify, unhexlify
 import json
@@ -15,35 +16,43 @@ class MyException(Exception):
     def __init__(self,data):
         self.__data = data
     def __str__(self):
-        return self.__data
+        return "MyException:"+self.__data
 
 def parse(resp):
     tokens=[]
-    entity=[]    
-    for idx in range(len(resp)):        
+    entity=[]
+    idx=0
+    while (idx<len(resp)):        
         if(resp[idx]==data_flag):
             t_value=ord(resp[idx+1])
             if(t_value<128 and t_value%2==1):
                 tokens.append(resp[idx+2:idx+2+t_value/2])
-                entity.append(resp[idx+2:idx+2+t_value/2])                
-            else:
+                entity.append(resp[idx+2:idx+2+t_value/2])
+                idx+=(2+t_value/2)
+            else:                
                 r_value=t_value%128
                 #m_str="Ref:"+hexlify(resp[idx+1])
-                offset=1
+                idx+=1
                 while(t_value>127):
-                    offset+=1
-                    #m_str+=hexlify(resp[idx+offset])
-                    t_value=ord(resp[idx+offset])
+                    idx+=1
+                    #m_str+=hexlify(resp[idx])
+                    t_value=ord(resp[idx])
                     r_value=r_value*128+t_value%128
                 r_value/=2
                 tokens.append(entity[r_value-22])
+                idx+=1
+        else:
+            idx+=1
+##    for tk in tokens:
+##        print tk.decode("utf8")
     global update_time
     update_time=tokens[-2]
     station_index=[]
     parse_result=dict()   
     for i in range(len(tokens)):
         if(station_map.has_key(tokens[i]) and station_map[tokens[i]]==tokens[i+1]):       
-            station_index.append(i+1)       
+            station_index.append(i+1)
+   
     station_found=len(station_index)
     if(station_found==len(station_map)):
         for i in range(station_found):
