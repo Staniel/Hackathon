@@ -5,10 +5,10 @@ import json
 ##data_table_head=unhexlify("706D32350B706D3235310B706D313031")
 ##data_table_end=unhexlify("44534964")
 data_flag=unhexlify("06")
-
 requst_file="requ.b"
 station_map={"201":"普陀监测站","209":"杨浦四漂","185":"卢湾师专附小","203":"*青浦淀山湖","215":"虹口凉城","183":"静安监测站","207":"徐汇上师大","193":"浦东川沙","195":"浦东张江","228":"浦东监测站","0":"全市平均"}
 poll_map=("SO2","NO2","PM10","CO","O3","O38","PM2_5","PM251","PM101")
+update_time=""
 
 class MyException(Exception):
     __data = ""
@@ -36,14 +36,14 @@ def parse(resp):
                     t_value=ord(resp[idx+offset])
                     r_value=r_value*128+t_value%128
                 r_value/=2
-                tokens.append(entity[r_value-22])    
-
+                tokens.append(entity[r_value-22])
+    global update_time
+    update_time=tokens[-2]
     station_index=[]
-    parse_result=dict()
+    parse_result=dict()   
     for i in range(len(tokens)):
         if(station_map.has_key(tokens[i]) and station_map[tokens[i]]==tokens[i+1]):       
-            station_index.append(i+1)
-                
+            station_index.append(i+1)       
     station_found=len(station_index)
     if(station_found==len(station_map)):
         for i in range(station_found):
@@ -81,26 +81,15 @@ def test():
     rfile.close()
     return parse(resp)
 
-
 if __name__ == '__main__':
     try:
         res=request()
+        print update_time.decode('utf8')
         for i in res:
             print i.decode('utf8')
             print res[i]
         #json.dumps(res)
     except Exception as err:
         print str(err)
-
-   
-
     
-##        print ("%d - %s")%(idx,i.decode('utf8'))
-##        if(i.find("Ref")==-1):
-##            idx+=1    
-
-
-
-
-  
     
