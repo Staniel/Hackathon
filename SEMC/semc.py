@@ -12,6 +12,7 @@ station_map={"201":"普陀监测站","209":"杨浦四漂","185":"卢湾师专附
 poll_map=("SO2","NO2","PM10_24","CO","O3","O3_8","PM25_24","PM2_5","PM10")
 rm_poll_map=("O3_8","PM25_24","PM10_24")
 update_time=""
+data_to_dump="DUMP"
 
 class MyException(Exception):
     __data = ""
@@ -21,6 +22,8 @@ class MyException(Exception):
         return "MyException:"+self.__data
 
 def parse(resp):
+    global data_to_dump
+    data_to_dump=resp
     tokens=[]
     entity=[]
     idx=0
@@ -92,8 +95,10 @@ def test():
     rfile.close()
     return parse(resp)
 
-if __name__ == '__main__':
+if __name__ == '__main__':    
     try:
+        time.sleep(30)
+        dumpFileName=datetime.datetime.fromtimestamp(time.time()).strftime("%Y_%m_%d_%H_%M_%S.dump")
         logFile = open("semc.log", 'a')
         logFile.write(datetime.datetime.fromtimestamp(time.time()).strftime("\n----%Y-%m-%d %H:%M:%S----\n"))
         try:
@@ -101,7 +106,7 @@ if __name__ == '__main__':
         except Exception as err:
             print "(SEMC_1st request)"+str(err)
             logFile.write("(SEMC_1st request)"+str(err)+"\n")
-            time.sleep(15)
+            time.sleep(30)
             res=request()
         for i in res:
             for rmp in rm_poll_map:
@@ -124,6 +129,9 @@ if __name__ == '__main__':
     except Exception as err:
         print str(err)
         logFile.write(str(err)+"\n")
+        dumpFile = open("dumps/"+"dumpFileName", 'wb')
+        dumpFile.write(data_to_dump)
+        dumpFile.close()
     finally:
         logFile.close()
     
