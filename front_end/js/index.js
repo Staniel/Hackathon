@@ -57,8 +57,17 @@ $("#button-"+pollname).addClass("btn-primary").addClass("active");
 虹口 38km
 杨浦 40km
 */
-//"青浦淀山湖"
-              var stationMap=["Average","普陀","徐汇上师大","静安监测站","浦东张江","虹口","十五厂","杨浦四漂"];
+/*BAN LIST
+
+
+
+da
+"*青浦淀山湖"
+"浦东川沙"
+"浦东监测站"
+*/
+
+              var stationMap=["全市平均","普陀监测站","徐汇上师大","静安监测站","浦东张江","虹口凉城","卢湾师专附小","杨浦四漂"];
               var pollutantMap=["PM2_5","PM10","CO","NO2","O3","SO2"];
                
               if($("#charts-controller").html()=="")
@@ -100,13 +109,17 @@ $("#button-"+pollname).addClass("btn-primary").addClass("active");
 
                     if((Math.abs(submitted_time1.valueOf()-submitted_time2.valueOf())/1000)<1200)
                     { 
-                      console.log("Match"+idx1);
+                      var tarValue=""
+                     // console.log("Match"+idx1);
                        for(var poll in pollutantMap)
                         {                          
                           for(var st in stationMap)
                           { 
-                              dataObj[pollutantMap[poll]][stationMap[st]].push(data2[idx2]['content'][stationMap[st]][pollutantMap[poll]]);
-                            }
+                            tarValue=data2[idx2]['content'][stationMap[st]][pollutantMap[poll]];
+                            if(tarValue=="NA")
+                              tarValue=0
+                            dataObj[pollutantMap[poll]][stationMap[st]].push(tarValue);
+                          }
                         }                      
                     idx2 +=1;                  
                     if(data2[idx2+1]!=undefined)
@@ -195,7 +208,7 @@ function fetchData(s1,s2)
         $('#date-picker').datetimepicker({
 
         format:"yyyy-mm-dd",
-        startDate: "2014-4-1",
+        startDate: "2014-4-9",
         weekStart: 1,        
         autoclose: 1,
         todayHighlight: 1,
@@ -269,7 +282,7 @@ function fetchData(s1,s2)
                                 //console.log(latest_submit);
                                 for(var station in latest_submit2["content"])
                                 {
-                                if(station=="Average")   
+                                if(station=="全市平均")   
                                   continue;      
                                 tableString=tableString+"<tr><td>"+station+"</td><td>"
                                 +latest_submit2["content"][station]["PM2_5"]+"</td><td>"
@@ -280,12 +293,12 @@ function fetchData(s1,s2)
                                 +latest_submit2["content"][station]["SO2"]+"</td></tr>";                  
                                 }
                                 tableString=tableString+"<tr><td><b>平均值<b/></td><td>"
-                                +latest_submit2["content"]["Average"]["PM2_5"]+"</td><td>"
-                                +latest_submit2["content"]["Average"]["PM10"]+"</td><td>"
-                                +latest_submit2["content"]["Average"]["CO"]+"</td><td>"
-                                +latest_submit2["content"]["Average"]["NO2"]+"</td><td>"
-                                +latest_submit2["content"]["Average"]["O3"]+"</td><td>"
-                                +latest_submit2["content"]["Average"]["SO2"]+"</td></tr>";     
+                                +latest_submit2["content"]["全市平均"]["PM2_5"]+"</td><td>"
+                                +latest_submit2["content"]["全市平均"]["PM10"]+"</td><td>"
+                                +latest_submit2["content"]["全市平均"]["CO"]+"</td><td>"
+                                +latest_submit2["content"]["全市平均"]["NO2"]+"</td><td>"
+                                +latest_submit2["content"]["全市平均"]["O3"]+"</td><td>"
+                                +latest_submit2["content"]["全市平均"]["SO2"]+"</td></tr>";     
                                 $("#main-table-tbody").append(tableString).find("tr").first().addClass("danger");
 
                                 chartsRender(data,data2);
