@@ -1,0 +1,37 @@
+body
+{
+    background:url("/static/img/reg.jpg");   
+    height: 100%;    
+    vertical-align: baseline;
+}
+#login-form
+{   
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 3px 3px 15px #222;  
+    color:#444;    
+   
+    padding: 2em 4em;    
+   
+    display: block;
+    width: 32em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:180px; 
+}
+
+#login-form h2
+{
+    text-shadow: 2px 2px 5px #888;
+    text-align: center;
+}
+.login-btn
+{
+    width:11em;
+    margin: 0 0.5em;
+    float:left;
+}
+#forget-pass
+{     
+    padding-left: 10em;
+}

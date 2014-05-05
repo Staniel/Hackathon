@@ -1,0 +1,162 @@
+
+
+/* http://meyerweb.com/eric/tools/css/neset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+
+
+/* HTML5 display-role reset for older browsers */
+nav {
+    display: block;
+}
+
+
+ul {
+    list-style: none;
+}
+
+
+a:link, a:active, a:visited {
+    text-decoration: none;
+    color: #5daced;
+}
+
+
+/**  MENU  **/
+
+nav {
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    background: #3B3E40;
+    float: left;
+    position: relative;
+    z-index: 500;
+    
+    box-shadow: inset -20px 0 10px -20px #000;
+    -moz-box-shadow: inset -20px 0 10px -20px #000;
+    -webkit-box-shadow: inset -20px 0 10px -20px #000;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    background: #3B3E40;
+    border-bottom: 1px solid #27292a;
+    border-top: 1px solid #46494b;
+    
+    box-shadow: inset -20px 0 10px -20px #000;
+    -moz-box-shadow: inset -20px 0 10px -20px #000;
+    -webkit-box-shadow: inset -20px 0 10px -20px #000;  
+}
+
+nav ul li:first-child {
+    border-top: none;
+}
+
+nav ul li:last-child {
+    border-bottom: none;
+}
+
+nav ul li a {
+    color: #fff !important;
+    display: block;
+    text-decoration: none;
+    padding: 20px 15px 20px 5px;
+    width: 190px;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+    -moz-text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+    -webkit-text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+    position:relative;
+}
+
+nav ul li:hover, nav ul li.section {
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+    background: #208ed3; /* Old browsers */ 
+    background: -moz-linear-gradient(top, #208ed3 0%, #0272bd 100%); /* FF3.6+ */ 
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#208ed3), color-stop(100%,#0272bd)); /* Chrome,Safari4+ */ 
+    background: -webkit-linear-gradient(top, #208ed3 0%,#0272bd 100%); /* Chrome10+,Safari5.1+ */ 
+    background: -o-linear-gradient(top, #208ed3 0%,#0272bd 100%); /* Opera 11.10+ */ 
+    background: -ms-linear-gradient(top, #208ed3 0%,#0272bd 100%); /* IE10+ */ 
+    background: linear-gradient(to bottom, #208ed3 0%,#0272bd 100%); /* W3C */ 
+    border-top: 1px solid #5daced;
+}
+
+nav ul li.section:first-child:hover {
+    border-top: 1px solid #5daced;
+}
+
+nav ul li:first-child:hover {
+    border-top: none;
+}
+
+nav ul li a.section:hover {
+    border: none;
+}
+
+nav span.icon {
+    width: 2em;
+}
+
+span.icon {
+    font-family: "entypo";
+    color: white;
+    font-size: 30px;
+    display: inline-block;
+    text-align: center;
+    width: 1.1em ;
+}
+
+/**  SUB MENU  **/
+
+ul li ul.submenu {
+    display: none;
+    z-index: 500;
+    top: 0;
+    background: #313131;
+}
+
+ul li ul.submenu li {
+    background: none;
+    border-bottom: 1px solid #111;
+    text-indent: 25px;
+}
+
+ul li ul.submenu li:first-child {
+    box-shadow: inset 0 20px 10px -20px #000;
+    -moz-box-shadow: inset 0 20px 10px -20px #000;
+    -webkit-box-shadow: inset 0 20px 10px -20px #000;
+}
+
+ul li ul.submenu li:last-child {
+    border-bottom: none;
+}
+
+ul li ul.submenu li a {
+    background: none;
+    padding: 13px;
+    width: 189px;
+}
+
+ul li:hover ul.submenu li a {
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+ul li ul.submenu li a:hover, ul li ul.submenu li:first-child {
+    border-top: none;
+}
+
+ul li ul.submenu li:hover {
+    border-top: 1px solid #4e5153;
+    background: #262626;
+}
+
+ul li ul.submenu li:hover:first-child {
+    border-top: none;
+}

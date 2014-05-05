@@ -1,0 +1,23 @@
+
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,.lead{
+    font-family:"ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif
+}
+.carousel-caption{z-index:10;bottom:40px;left:15%;right:15%}
+.carousel .item{height:460px;background-color:#000}
+.carousel-inner>.item>img{position:absolute;top:0;left:0;min-width:100%;height:460px}
+.carousel .masthead-bg{ position:absolute;top:0;left:0;min-width:100%;height:460px;text-shadow:0 1px 3px rgba(0,0,0,0.4),0 0 30px rgba(0,0,0,0.075);}
+.carousel .masthead-bg:after{content:'';display:block;position:absolute;top:0;right:0;bottom:0;left:0;opacity:.4;}
+.masthead h1{font-size:60px;line-height:1;letter-spacing:-2px;font-weight:bold}
+.masthead h2{font-size:18px;font-weight:200;line-height:1.25}
+.masthead .bs3-link{margin-top:20px}
+.masthead .bs2-link{color:#fff;color:rgba(255,255,255,0.5);-webkit-transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;transition:all .2s ease-in-out}
+.masthead .bs2-link:hover{color:#fff;text-shadow:0 0 10px rgba(255,255,255,0.25)}
+@media screen and (min-width:768px){.masthead h1{font-size:90px} .masthead h2{font-size:24px}}
+@media screen and (min-width:992px){.masthead h1{font-size:100px} .masthead h2{font-size:30px}}
+
+@media (min-width:768px){ .carousel-caption p{margin-bottom:20px;font-size:21px;line-height:1.4}}
+
+.projects-header{width:70%;text-align:center;margin:60px 0 10px;font-weight:200;margin-bottom:40px;display:block;margin-left:auto;margin-right:auto}.projects-header h2{font-size:30px;letter-spacing:-1px}
+@media screen and (min-width:768px){.projects-header h2{font-size:50px}}
+.btn-primary.btn-shadow{-webkit-box-shadow:inset 0 -4px 0 #2a6496;box-shadow:inset 0 -4px 0 #2a6496;border:0}
+.btn-lg.btn-shadow{padding:13px 35px 17px}

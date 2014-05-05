@@ -1,0 +1,46 @@
+ <!-- HEADER -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>SJTU Hackathon</title>  
+  <link href="/static/css/lib/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/css/global.css" rel="stylesheet"> 
+
+<body>
+<link href="/static/css/login.css" rel="stylesheet">
+<div class="container">
+
+<div id="login-form">
+     <h2>SJTU Hackathon 2014</h2> 
+     <form role="form" action="/login/submit" method="post">
+    
+        <label for="InputEmail"></label>
+        <input name="email" type="email" class="form-control" id="InputEmail" placeholder="Email">
+     
+      <div class="form-group">
+        <label for="InputPassword"></label>
+        <input name="password" type="password" class="form-control" id="InputPassword" placeholder="Password">
+      </div>   
+      <div class="checkbox">
+        <label>
+          <input name="checkbox" type="checkbox"> 记住我
+        </label>
+      </div>
+      <br/>
+      <button type="submit" class="btn btn-primary login-btn">登 录</button>  
+    </form>
+    <a href="/reg"><button class="btn btn-default login-btn">注 册</button></a>
+    <br/>
+    <br/>
+    <br/>   
+   <a id="forget-pass" href="#">忘记密码?</a>
+  </div>
+ </div>
+<script src="/static/js/lib/jquery.min.js"></script>
+<script src="/static/js/lib/bootstrap.min.js"></script>   
+
+  </body>
+</html>
