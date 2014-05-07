@@ -1,0 +1,23 @@
+body
+{
+    background:url("/static/img/reg.jpg");   
+    vertical-align: baseline;
+}
+#reg-container
+{
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+    width: 50em;
+    padding: 3em 5em;    
+    color:#444; 
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background: #fff;   
+    box-shadow: 3px 3px 15px #111;   
+}
+#reg-container h3
+{
+    text-shadow: 2px 2px 5px #888;    
+}

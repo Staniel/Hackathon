@@ -1,0 +1,52 @@
+ <!-- HEADER -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>SJTU Hackathon</title>  
+  <link href="/static/css/lib/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/css/global.css" rel="stylesheet"> 
+<body>
+<link href="/static/css/reg.css" rel="stylesheet">
+<div id="reg-container">
+<h3>注册 SJTU Hackathon 2014</h3>
+<br/  >
+   <form id="reg-form" role="form" action="/reg/submit" method="post">
+  <div class="form-group" id="email-group">
+    <label for="InputEmail">邮箱地址</label>
+    <input type="email" class="form-control" name="email" id="InputEmail" placeholder="Email">
+    <p class="help-block">邮箱作为登录凭证,不可更改.请填写有效的地址.</p> 
+  </div>
+   <div class="form-group" id="nickname-group">
+    <label for="InputNickname">昵称</label>
+    <input type="text" class="form-control" name="nickname" id="InputNickname" placeholder="Nickname">
+    <p class="help-block">昵称用于显示,对他人可见,建议使用真实姓名.</p>
+    
+  </div>
+  <div class="form-group"  id="password-group">
+    <label for="InputPassword1">密码</label>
+    <input type="password" class="form-control" name="password" id="InputPassword1" placeholder="Password">
+    <p class="help-block">密码最小长度为6位</p>
+  </div>
+   <div class="form-group"  id="password2-group">
+    <label for="InputPassword2">重复密码</label>
+    <input type="password" class="form-control" id="InputPassword2" placeholder="Repeat Password">
+    <p class="help-block">重复输入的密码</p>
+  </div>  
+   <div class="form-group">
+    <label for="InputInvitationcode">邀请码</label>
+    <input type="text" class="form-control" name="invitationcode" id="InputInvitationcode" placeholder="Invitation Code">
+    <p class="help-block">没有邀请码?请联系nihiue@gmail.com索取</p>
+  </div>    
+ 
+  <button type="submit" class="btn btn-default">提 交</button>
+</form>
+
+</div>
+
+<script src="/static/js/lib/jquery.min.js"></script>
+<script src="/static/js/lib/bootstrap.min.js"></script>   
+<script src="/static/js/reg.js"></script>   
+</body>
+</html>

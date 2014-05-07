@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">  
+  <title>Redirect</title>    
+<body style="background:#444C57;font-size:18px;">
+  <div style="text-align:center;border-radius: 10px;padding:30px;width:350px;margin:300px auto 0 auto;display:block;background:#fff;">
+    <b><p>{{ message }}</p></b>
+    <p><span id="time_span"></span> 秒后转到{{ tar_name }}</p>
+    <button style="padding:8px 40px;" onclick="do_redir()">立即前往</button>
+    <br/>    
+  </div>
+  <script>
+      var countDownTime=5;
+      var time_span_obj=document.getElementById("time_span");
+      time_span_obj.innerHTML=""+countDownTime;
+      function do_redir()  {
+        window.clearInterval(countDown_timer);
+        window.location="{{ tar_url }}";
+      }
+      function countDown()
+      {
+        if(countDownTime>0){
+             countDownTime=countDownTime-1;
+             time_span_obj.innerHTML=""+countDownTime;
+        }       
+        else{            
+            do_redir();
+        }
+      }
+      var countDown_timer=window.setInterval("countDown()",1000);
+  </script>
+</body>
+</html>
