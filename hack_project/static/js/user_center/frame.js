@@ -48,17 +48,28 @@ function do_fetch_page(item_id) {
 function main_item() {	
 	var sel_obj=$(this);
     var item_id=this.id;
-    if(!sel_obj.hasClass("active")) {   		
+    
+     if(!sel_obj.hasClass("active")) {   		
         menu_obj.find(".in").collapse("hide");	
 		menu_obj.find("li.active").removeClass("active");		
 		sel_obj.addClass("active");
 		$("#"+item_id+"_collapse").collapse("show");
 
+        if(item_id=="menu_logout")
+        {
+           if(confirm("确认登出?"))
+           {
+                window.location="/logout";
+            } 
+            return;           
+        }
         if(menu_page_map.hasOwnProperty(item_id))
         {
             menu_obj.find(".sub_selected").removeClass("sub_selected");
             do_fetch_page(item_id);
         } 
+        
+        
 	}    
 }
 function sub_item()
