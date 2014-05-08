@@ -3,7 +3,7 @@ from flask import g,Flask,request,render_template,session,abort,redirect, url_fo
 from functools import wraps
 from db_support import DBconnection,email_validator
 from hashlib import md5
-
+from validate_code import create_validate_code
 app = Flask(__name__)
 
 
@@ -11,7 +11,7 @@ def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if session.get('logged_in') is not True:
-             return render_template('redir.html',message=u"需要登录...",tar_url=u"/login",tar_name=u"登录页面")
+             return redirect('/login')
         return f(*args, **kwargs)
     return decorated_function
 
@@ -61,6 +61,17 @@ def login_submit():
 
     except Exception, e:
         return render_template('redir.html',message=u"登录失败:"+str(e),tar_url=u"/login",tar_name=u"登录页面")
+@app.route('/validate_code')
+def rvalidate_code():
+    import StringIO
+    code_img,code_value = create_validate_code()  
+    session["validate_code"]=code_value
+    buf = StringIO.StringIO()  
+    code_img.save(buf,'PNG') 
+    buf_str = buf.getvalue()  
+    response = app.make_response(buf_str)   
+    response.headers['Content-Type'] = 'image/png'  
+    return response   
 
 @app.route('/reg')
 def reg_page():
@@ -80,10 +91,15 @@ def reg_check():
 @app.route('/reg/submit',methods=['POST'])
 def reg_submit():    
     try:
+        v_code=session.get("validate_code")
+        if(v_code==None or request.form["validate_code"].upper()!=v_code):
+            raise Exception(u"Wrong Validate Code.")   
         if(DBconnection.UserModel.find_one({"Email":request.form["email"]})!=None):
             raise Exception("Invaild Email.");
         if(request.form["invitationcode"]!=u"Tyrande"):
-            raise Exception("Invaild invitation code.")       
+            raise Exception("Invaild Invitation Code.")    
+        
+        session.pop('validate_code',None) 
         newUser=DBconnection.UserModel()
         newUser["Email"]=request.form["email"].lower()
         newUser["Password"]=md5(newUser["Email"]+request.form["password"]).hexdigest().upper()

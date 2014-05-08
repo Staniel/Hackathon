@@ -22,7 +22,12 @@ function checkEmail()
     });   
     return true; 
 }
-
+function checkValidateCode()
+{
+    if($("#validate_code-input").val().length==4)
+        return true;
+    return false;
+}
 function checkPassword()
 {
     var plen=$("#InputPassword1").val().length;
@@ -32,7 +37,7 @@ function checkPassword()
         return false;
     }
     else{
-        $("#password-group").find("p").text("密码可用");
+        $("#password-group").addClass("has-success").find("p").text("密码可用");
         return true;
     }
 }
@@ -51,10 +56,10 @@ function checkRepeatPassword()
 }
 function checkNickname()
 {
-    $("#nickname-group").removeClass("has-error");
+    $("#nickname-group").removeClass("has-error").removeClass("has-success");
     var nlen=$("#InputNickname").val().length;
-    if(nlen>2&&nlen<50){
-       $("#nickname-group").addClass("has-error").find("p").text("昵称可用");
+    if(nlen>2&&nlen<20){
+       $("#nickname-group").addClass("has-success").find("p").text("昵称可用");
         return true;
     }
     else{
@@ -65,13 +70,13 @@ function checkNickname()
 }
 function checkSubmit()
 {
-    if(EmailAddressValid&&checkNickname()&&checkPassword()&&checkRepeatPassword())
+    if(EmailAddressValid&&checkNickname()&&checkPassword()&&checkRepeatPassword()&&checkValidateCode())
     {
         return true;
     }
     else
     {
-        alert("表单未正确填写");
+        alert("请正确填写表单!");
         return false;
     }
 }
