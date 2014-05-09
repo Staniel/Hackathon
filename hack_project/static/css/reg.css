@@ -1,6 +1,9 @@
 body
 {
-    background:url("/static/img/user_center_bg.jpg") center;   
+    background:url("/static/img/user_center_bg.jpg");    
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position:center;  
     vertical-align: baseline;
     
 }

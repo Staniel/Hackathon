@@ -1,6 +1,9 @@
 body
 {
-    background:url("/static/img/user_center_bg.jpg") center;   
+    background:url("/static/img/user_center_bg.jpg");    
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position:center;
     height: 100%;    
     vertical-align: baseline;
 }
@@ -16,7 +19,7 @@ body
     width: 32em;
     margin-left: auto;
     margin-right: auto;
-    margin-top:180px; 
+    margin-top:150px; 
 }
 
 #login-form h2

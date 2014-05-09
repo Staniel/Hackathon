@@ -70,13 +70,13 @@ function checkNickname()
 }
 function checkSubmit()
 {
-    if(EmailAddressValid&&checkNickname()&&checkPassword()&&checkRepeatPassword()&&checkValidateCode())
+    if(EmailAddressValid&&checkNickname()&&checkPassword()&&checkRepeatPassword()&&checkValidateCode()&&($("#form-check")[0].checked))
     {
         return true;
     }
     else
     {
-        alert("请正确填写表单!");
+        alert("请完整填写表单!");
         return false;
     }
 }
