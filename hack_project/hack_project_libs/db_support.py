@@ -24,17 +24,17 @@ class UserModel(Document):
         'API_Key':str,
         'Reg_Time':str,
         'Invitation_Code':unicode,
-        'User_Status':int
+        'Status':int
     }
     validators = {
-        'Nickname': length_validator(3,50),
+        'Nickname': length_validator(3,20),
         'Email': email_validator,
         'Invitation_Code':length_validator(3,50)
     }
     required_fields = ['Email', 'Password', 'Nickname','Invitation_Code','API_Key']
     default_values = {       
         'Reg_Time':str(datetime.datetime.utcnow()),
-        'User_Status':0
+        'Status':0
     }
 DBconnection.register([UserModel])
 

@@ -11,7 +11,7 @@
 <link href="/static/css/reg.css" rel="stylesheet">
 <div id="reg-container">
 <h3>注册 SJTU Hackathon 2014</h3>
-<br/  >
+<br/>
    <form id="reg-form" role="form" action="/reg/submit" method="post">
   <div class="form-group" id="email-group">
     <label for="InputEmail">邮箱地址</label>
@@ -38,10 +38,40 @@
     <label for="InputInvitationcode">邀请码</label>
     <input type="text" class="form-control" name="invitationcode" id="InputInvitationcode" placeholder="Invitation Code">
     <p class="help-block">没有邀请码?请联系nihiue@gmail.com索取</p>
-  </div>    
- 
+  </div>   
+   <div class="form-group">
+        <label for="validate_code-input">验证码</label>
+        <br/>
+        <input name="validate_code" type="text" class="form-control" id="validate_code-input" placeholder="Validate Code">
+        <img src="/validate_code" id="validate_code-img"></img>
+        
+  </div> 
+  <div class="form-group">
+    <label for="InputInvitationcode">用户协议</label>
+    <textarea class="form-control" rows="8">
+黑客马拉松”，炫酷中带着神秘色彩，坚持中迸发出创新火花。
+
+上海交通大学第一届“黑客马拉松”活动不仅仅是一场编程马拉松、开发者的狂欢，无需编程经验，你就能像创客一样将自己的想法付诸实践。
+
+本届“黑客马拉松”以“空气监测”为主题，致力于打造一个开放的创新平台，发现你我身边勇于创新敢于动手的小伙伴。
+本活动将提供专业的培训和指导、免费的零食和饮料。只要你能在两天的活动时间内利用所提供的Arduino开发板及传感器模块等硬件实践你的想法，就能带走价值上千元的硬件。
+欢迎各专业有想法爱动手的小伙伴们报名参加！
+
+主办方：上海交通大学网络信息中心
+承办方：OMNILab / GitCafe
+协办方：
+赞助方：
+
+</textarea>
+<br/>
+      <input type="checkbox" id="form-check"> 我已阅读并同意以上用户协议
+
+  </div> 
+
+ <br/>
   <button type="submit" class="btn btn-default">提 交</button>
 </form>
+  
 
 </div>
 
