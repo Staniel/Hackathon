@@ -23,18 +23,19 @@
     </div>
      <div id="main-navbar-collapse" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/">首 页</a></li>        
-            <li><a href="/document">开发文档</a></li>
-            <li><a href="/openapi">Open API</a></li>
-            <li><a href="/data">数据汇总</a></li>
-            <li><a href="/about">关 于</a></li>            
+
+            <li{% if pagename_index %} class="active"{% endif %}><a href="/">首 页</a></li>        
+            <li{% if pagename_document %} class="active"{% endif %}><a href="/document">开发文档</a></li>
+            <li{% if pagename_openapi %} class="active"{% endif %}><a href="/openapi">Open API</a></li>
+            <li{% if pagename_data %} class="active"{% endif %}><a href="/data">数据汇总</a></li>
+            <li{% if pagename_about %} class="active"{% endif %}><a href="/about">关 于</a></li>            
           </ul>
           <ul class="nav navbar-nav navbar-right">
             {% if session.logged_in %}
               <li>  <a href="/user_center"><span class="glyphicon glyphicon-home"></span> 用户中心</a></li> 
             {% else %}
-              <li>  <a href="/login"><span class="glyphicon glyphicon-user"> </span> 登陆</a></li> 
-              <li>  <a href="/reg"><span class="glyphicon glyphicon-send"> </span> 注册</a></li> 
+              <li>  <a href="/login" target="_blank"><span class="glyphicon glyphicon-user"> </span> 登陆</a></li> 
+              <li>  <a href="/reg" target="_blank"><span class="glyphicon glyphicon-send"> </span> 注册</a></li> 
             {% endif %}
                  
           </ul>

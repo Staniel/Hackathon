@@ -15,23 +15,23 @@
    <form id="reg-form" role="form" action="/reg/submit" method="post">
   <div class="form-group" id="email-group">
     <label for="InputEmail">邮箱地址</label>
-    <input type="email" class="form-control" name="email" id="InputEmail" placeholder="Email">
+    <input type="email" class="form-control" name="email" id="InputEmail" placeholder="Email" required="true">
     <p class="help-block">邮箱作为登录凭证,不可更改.请填写有效的地址.</p> 
   </div>
    <div class="form-group" id="nickname-group">
     <label for="InputNickname">昵称</label>
-    <input type="text" class="form-control" name="nickname" id="InputNickname" placeholder="Nickname">
+    <input type="text" class="form-control" name="nickname" id="InputNickname" placeholder="Nickname" required="true">
     <p class="help-block">昵称用于显示,对他人可见,建议使用真实姓名.</p>
     
   </div>
   <div class="form-group"  id="password-group">
     <label for="InputPassword1">密码</label>
-    <input type="password" class="form-control" name="password" id="InputPassword1" placeholder="Password">
+    <input type="password" class="form-control" name="password" id="InputPassword1" placeholder="Password" required="true">
     <p class="help-block">密码最小长度为6位</p>
   </div>
    <div class="form-group"  id="password2-group">
     <label for="InputPassword2">重复密码</label>
-    <input type="password" class="form-control" id="InputPassword2" placeholder="Repeat Password">
+    <input type="password" class="form-control" id="InputPassword2" placeholder="Repeat Password" required="true">
     <p class="help-block">重复输入的密码</p>
   </div>  
    <div class="form-group">
@@ -42,7 +42,7 @@
    <div class="form-group">
         <label for="validate_code-input">验证码</label>
         <br/>
-        <input name="validate_code" type="text" class="form-control" id="validate_code-input" placeholder="Validate Code">
+        <input name="validate_code" type="text" class="form-control" id="validate_code-input" placeholder="Validate Code" required="true">
         <img src="/validate_code" id="validate_code-img"></img>
         
   </div> 
@@ -64,7 +64,7 @@
 
 </textarea>
 <br/>
-      <input type="checkbox" id="form-check"> 我已阅读并同意以上用户协议
+      <input checked="true" type="checkbox" id="form-check"> 我已阅读并同意以上用户协议
 
   </div> 
 
