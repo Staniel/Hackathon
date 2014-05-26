@@ -77,8 +77,10 @@ char* build_request(aJsonObject* msg, char* key)
 {
   char temp[512];
   char data[256];
+  char* json=aJson.print(msg);
   strcpy(temp,sample_data1);
-  strcpy(data,aJson.print(msg));
+  strcpy(data,json);
+  free(json);
   int length=strlen(data);
   strcat(temp,itoa(length+13+strlen(key),value,10));
   strcat(temp,"\r\n\r\nkey=");
