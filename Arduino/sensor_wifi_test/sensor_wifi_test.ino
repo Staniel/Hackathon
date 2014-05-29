@@ -4,24 +4,50 @@ dht DHT;
 #define DHT22_PIN 7
 char sample_data1[512]="POST /data/write HTTP/1.1\r\nHost: 202.120.58.116:8080\r\nContent-Type: application/x-www-form-urlencoded\r\nContent-Length: ";
 char value[4];
+/*definition for CO2 sensor*/
+float volts;
+int percentage;
+#define         MG_PIN                       (2) 
+#define         BOOL_PIN                     (2)
+#define         DC_GAIN                      (8.5)   //define the DC gain of amplifier
+#define         READ_SAMPLE_INTERVAL         (50)    //define how many samples you are going to take in normal operation
+#define         READ_SAMPLE_TIMES            (5)     //define the time interval(in milisecond) between each samples in 
+//These two values differ from sensor to sensor. user should derermine this value.
+#define         ZERO_POINT_VOLTAGE           (0.324) //define the output of the sensor in volts when the concentration of CO2 is 400PPM
+#define         REACTION_VOLTGAE             (0.044) //define the voltage drop of the sensor when move the sensor from air into 1000ppm CO2
+float           CO2Curve[3]  =  {
+  2.602,ZERO_POINT_VOLTAGE,(REACTION_VOLTGAE/(2.602-3.602))};   
+//two points are taken from the curve. 
+//with these two points, a line is formed which is
+//"approximately equivalent" to the original curve.
+//data format:{ x, y, slope}; point1: (lg400, 0.324), point2: (lg4000, 0.280) 
+//slope = ( reaction voltage ) / (log400 –log1000) 
+
+/*definition for dust sensor*/
 int dustPin=A0;
-int ledPower=2;
+int ledPower=4;
 int dustVal=0,lastDustVal=0;
+float voltage=0, dustDensity = 0;
 const int Time280=280, Time40=40, offTime=9680;
+
 long previousMillis=0;
 long previousMillis2=0;
 long previousMillis3=0;
-int interval1=5;
+int interval1=4;
 int interval2=500;
 int interval3=10000;
-float temperature,humidity;
-float voltage=0, dustDensity = 0;
 unsigned long currentMillis;
+
+float temperature,humidity;
+
+
 
 void setup()
 {
   Serial.begin(115200);
   pinMode(ledPower,OUTPUT);
+  pinMode(BOOL_PIN, INPUT);  
+  digitalWrite(BOOL_PIN, HIGH); 
 }
 
 int getDustVal()
@@ -35,6 +61,28 @@ int getDustVal()
   digitalWrite(ledPower,HIGH); // turn the LED off
   delayMicroseconds(offTime); 
   return Val;
+}
+
+float MGRead(int mg_pin)
+{
+  int i;
+  float v=0;
+
+  for (i=0;i<READ_SAMPLE_TIMES;i++) {
+    v += analogRead(mg_pin);
+    delay(READ_SAMPLE_INTERVAL);
+  }
+  v = (v/READ_SAMPLE_TIMES) *5/1024 ;
+  return v;  
+}
+int  MGGetPercentage(float volts, float *pcurve)
+{
+  if ((volts/DC_GAIN )>=ZERO_POINT_VOLTAGE) {
+    return -1;
+  } 
+  else { 
+    return pow(10, ((volts/DC_GAIN)-pcurve[1])/pcurve[2]+pcurve[0]);
+  }
 }
 
 aJsonObject *createMessage()
@@ -99,7 +147,7 @@ void post_request(char* request)
 void loop()
 {
   currentMillis = millis();
-  
+
   //pseudo thread one to handle serial comminication
   if(currentMillis - previousMillis > interval1) 
   {
@@ -108,7 +156,7 @@ void loop()
     while(Serial.available())
       Serial.write(Serial.read());  
   }
-  
+
   //pseudo thread two to update sensor value
   if(currentMillis - previousMillis2 > interval2) 
   {
@@ -122,17 +170,20 @@ void loop()
     //temperature and humidity 
     int chk = DHT.read22(DHT22_PIN);
     if (chk==DHTLIB_OK)
-      {
-        temperature = DHT.temperature;
-        humidity = DHT.humidity;
-      }
-     else
-     {
-     temperature = 0;
-        humidity = 0;
-     }
+    {
+      temperature = DHT.temperature;
+      humidity = DHT.humidity;
+    }
+    else
+    {
+      temperature = 0;
+      humidity = 0;
+    }
+    volts=MGRead(MG_PIN);
+    percentage = MGGetPercentage(volts,CO2Curve);
+    Serial.print(volts);Serial.print("\n");
   }
-  
+
   //pseudo thread three to post request
   if(currentMillis - previousMillis3 > interval3) 
   {
@@ -143,12 +194,19 @@ void loop()
     add_pm25(msg,dustDensity*1000);
     add_temperature(msg, temperature);
     add_humidity(msg, humidity);
-    add_text(msg,"name","yao");
+    
+    //there is limitation of our CO2 sensor, which is 400ppm
+    if (percentage ==-1)
+      add_text(msg,"CO2","< 400ppm");
+    else
+      add_CO2(msg, percentage);
+      
     char* temp=build_request(msg,"MOGE");
     post_request(temp);
     //clean the memory to avoid overflow
     aJson.deleteItem(msg);
   }
 }
+
 
 
