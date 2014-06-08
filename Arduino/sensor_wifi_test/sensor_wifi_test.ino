@@ -181,7 +181,7 @@ void loop()
     }
     volts=MGRead(MG_PIN);
     percentage = MGGetPercentage(volts,CO2Curve);
-    Serial.print(volts);Serial.print("\n");
+    //Serial.print(volts);Serial.print("\n");
   }
 
   //pseudo thread three to post request
