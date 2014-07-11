@@ -26,12 +26,11 @@ try:
             urllib2.urlopen(url1,timeout=10) 
         try:
             response = urllib2.urlopen(url2,timeout=10) #Second request with cookie
-            print 1
+            
         except Exception as err:
             print "(pm25in_2nd request)"+str(err)
             logFile.write("(pm25in_2nd request)"+str(err)+"\n")
             response = urllib2.urlopen(url2,timeout=10) 
-            print 2
             
         jsonObj = json.loads(response.read())
         response.close()
