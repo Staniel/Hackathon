@@ -1,15 +1,19 @@
-##POST_URL="http://10.50.6.70:8080/data/write"
-##POST_NAME="BAZHE"
+POST_URL="http://10.50.6.70:8080/data/write"
+POST_NAME="PM25"
 
 import urllib2,urllib
 import cookielib
 import json
 import time,datetime
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf8') 
 
 try:
     logFile = open("pm25in.log", 'a')
     logFile.write(datetime.datetime.fromtimestamp(time.time()).strftime("\n----%Y-%m-%d %H:%M:%S----\n"))
-    cities_json = open("cities.txt", 'r').read()
+    cities_json = open("cities.txt", 'r').read().decode('utf-8')
     cities = json.loads(cities_json)
     urllib2.install_opener(urllib2.build_opener(urllib2.HTTPCookieProcessor(cookielib.CookieJar()))) #Handle the cookie
     jsonObj = {}
@@ -46,23 +50,22 @@ try:
                 res['Average']=dict()
                 for i in range(len(vmap)):
                     res['Average'][tmap[i]]=station[vmap[i]]
-                    
         res_all[cities[pinyin]] = res
     outfile = open("data.txt","w")
-    jsonCoded=json.dump(res_all,outfile)
+    jsonCoded=json.dumps(res_all,ensure_ascii=False)
+    outfile.write(jsonCoded)
+    postDict = {"content":jsonCoded,"key":POST_NAME}
+    postData = urllib.urlencode(postDict)
+    req = urllib2.Request(POST_URL,postData)
+    req.add_header('Content-Type', "application/x-www-form-urlencoded")
+    resp = urllib2.urlopen(req,timeout=10)
     
-##    postDict = {"content":jsonCoded,"key":POST_NAME}
-##    postData = urllib.urlencode(postDict)
-##    req = urllib2.Request(POST_URL,postData)
-##    req.add_header('Content-Type', "application/x-www-form-urlencoded")
-##    resp = urllib2.urlopen(req,timeout=10)
-##    
-##    logFile.write("Response:"+resp.read()+"\n")
-##    print resp.read()
+    logFile.write("Response:"+resp.read()+"\n")
+    print resp.read()
 except Exception as err:
     print err
     logFile.write(str(err)+"\n")
 finally:
     logFile.close()
-    ##resp.close()
+    resp.close()
     outfile.close()
