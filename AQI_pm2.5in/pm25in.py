@@ -35,12 +35,14 @@ try:
             print "(pm25in_2nd request)"+str(err)
             logFile.write("(pm25in_2nd request)"+str(err)+"\n")
             response = urllib2.urlopen(url2,timeout=10) 
-            
+        
         jsonObj = json.loads(response.read())
         response.close()
         vmap=["pm2_5","co","pm10","o3","so2","no2"]
         tmap=["PM2_5","CO","PM10","O3","SO2","NO2"]
         res = {}
+        res['lng']=cities[pinyin]['lng']
+        res['lat']=cities[pinyin]['lat']
         for station in jsonObj:
             if(station['position_name']!=None):
                 res[station['position_name']]=dict()
@@ -50,14 +52,13 @@ try:
                 res['Average']=dict()
                 for i in range(len(vmap)):
                     res['Average'][tmap[i]]=station[vmap[i]]
-        res_all[cities[pinyin]] = res
+        res_all[cities[pinyin]['name']] = res
     outfile = open("data.txt","w")
     jsonCoded=json.dumps(res_all,ensure_ascii=False)
     outfile.write(jsonCoded)
     postDict = {"content":jsonCoded,"key":POST_NAME}
     postData = urllib.urlencode(postDict)
     req = urllib2.Request(POST_URL,postData)
-    req.add_header('Content-Type', "application/x-www-form-urlencoded")
     resp = urllib2.urlopen(req,timeout=10)
     
     logFile.write("Response:"+resp.read()+"\n")

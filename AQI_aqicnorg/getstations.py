@@ -8,7 +8,7 @@ stations = {}
 for i in soup.find('div',text=u'ÖÐ¹ú').next_sibling.find_all('a',{'href':re.compile('^http://aqicn.org/city/')}):
     link = i.get('href') + 'm/'
     stations[link] = i.text
-    
+print len(stations)
 outfile = codecs.open('stations.txt','w','utf-8')
 stations_write = json.dumps(stations,ensure_ascii=False)
 outfile.write(stations_write)

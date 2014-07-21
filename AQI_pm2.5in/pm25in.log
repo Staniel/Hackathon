@@ -107,3 +107,41 @@ Response:{
     "ok": 1
 }
 
+
+----2014-07-21 16:44:11----
+(pm25in_2nd request)<urlopen error timed out>
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-21 17:28:50----
+'lng'
+
+----2014-07-21 17:29:14----
+'lng'
+
+----2014-07-21 17:33:47----
+(pm25in_1st request)<urlopen error [Errno 11004] getaddrinfo failed>
+<urlopen error [Errno 11004] getaddrinfo failed>
+
+----2014-07-21 17:34:07----
+'lng'
+
+----2014-07-21 17:35:22----
+'lng'
+
+----2014-07-21 17:35:54----
+'lng'
+
+----2014-07-21 17:36:56----
+(baidumap api request)<urlopen error timed out>
+'NoneType' object is not callable
+
+----2014-07-21 18:06:11----
+
+----2014-07-21 18:11:35----
+Response:{
+    "ok": 1
+}
+

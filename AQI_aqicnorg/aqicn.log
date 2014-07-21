@@ -77,3 +77,302 @@
 ----2014-07-16 11:55:59----
 
 ----2014-07-16 13:00:30----
+
+----2014-07-16 13:00:38----
+Response:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>InvalidDocument: key u'\u676d\u5dde\u5e02\u5bcc\u9633\u5e02\u5bcc\u9633\u9547\u4e8c\u4e2d (Fuyang No.2 middle school, Hangzhou) (CN:Zhejiang/\u676d\u5dde\u5e02\u5bcc\u9633\u5e02/\u5bcc\u9633\u9547\u4e8c\u4e2d)' must not contain '.' // Werkzeug Debugger</title>
+    <link rel="stylesheet" href="?__debugger__=yes&amp;cmd=resource&amp;f=style.css" type="text/css">
+    <!-- We need to make sure this has a favicon so that the debugger does not by
+         accident trigger a request to /favicon.ico which might change the application
+         state. -->
+    <link rel="shortcut icon" href="?__debugger__=yes&amp;cmd=resource&amp;f=console.png">
+    <script type="text/javascript" src="?__debugger__=yes&amp;cmd=resource&amp;f=jquery.js"></script>
+    <script type="text/javascript" src="?__debugger__=yes&amp;cmd=resource&amp;f=debugger.js"></script>
+    <script type="text/javascript">
+      var TRACEBACK = 140731874063056,
+          CONSOLE_MODE = false,
+          EVALEX = true,
+          SECRET = "9Jc5tcuuAx9UEO3T4zuM";
+    </script>
+  </head>
+  <body>
+    <div class="debugger">
+<h1>bson.errors.InvalidDocument</h1>
+<div class="detail">
+  <p class="errormsg">InvalidDocument: key u'\u676d\u5dde\u5e02\u5bcc\u9633\u5e02\u5bcc\u9633\u9547\u4e8c\u4e2d (Fuyang No.2 middle school, Hangzhou) (CN:Zhejiang/\u676d\u5dde\u5e02\u5bcc\u9633\u5e02/\u5bcc\u9633\u9547\u4e8c\u4e2d)' must not contain '.'</p>
+</div>
+<h2 class="traceback">Traceback <em>(most recent call last)</em></h2>
+<div class="traceback">
+  
+  <ul><li><div class="frame" id="frame-140731874065104">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/flask/app.py"</cite>,
+      line <em class="line">1836</em>,
+      in <code class="function">__call__</code></h4>
+  <pre>return self.wsgi_app(environ, start_response)</pre>
+</div>
+
+<li><div class="frame" id="frame-140731874064272">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/flask/app.py"</cite>,
+      line <em class="line">1820</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <pre>response = self.make_response(self.handle_exception(e))</pre>
+</div>
+
+<li><div class="frame" id="frame-140731874064080">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/flask_restful/__init__.py"</cite>,
+      line <em class="line">257</em>,
+      in <code class="function">error_router</code></h4>
+  <pre>return self.handle_error(e)</pre>
+</div>
+
+<li><div class="frame" id="frame-140731874065424">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/flask/app.py"</cite>,
+      line <em class="line">1817</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <pre>response = self.full_dispatch_request()</pre>
+</div>
+
+<li><div class="frame" id="frame-140731874063760">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/flask/app.py"</cite>,
+      line <em class="line">1477</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <pre>rv = self.handle_user_exception(e)</pre>
+</div>
+
+<li><div class="frame" id="frame-140731874062480">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/flask_restful/__init__.py"</cite>,
+      line <em class="line">257</em>,
+      in <code class="function">error_router</code></h4>
+  <pre>return self.handle_error(e)</pre>
+</div>
+
+<li><div class="frame" id="frame-140731874064656">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/flask/app.py"</cite>,
+      line <em class="line">1475</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <pre>rv = self.dispatch_request()</pre>
+</div>
+
+<li><div class="frame" id="frame-140731874063952">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/flask/app.py"</cite>,
+      line <em class="line">1461</em>,
+      in <code class="function">dispatch_request</code></h4>
+  <pre>return self.view_functions[rule.endpoint](**req.view_args)</pre>
+</div>
+
+<li><div class="frame" id="frame-140731874065488">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/flask_restful/__init__.py"</cite>,
+      line <em class="line">397</em>,
+      in <code class="function">wrapper</code></h4>
+  <pre>resp = resource(*args, **kwargs)</pre>
+</div>
+
+<li><div class="frame" id="frame-140731874065232">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/flask/views.py"</cite>,
+      line <em class="line">84</em>,
+      in <code class="function">view</code></h4>
+  <pre>return self.dispatch_request(*args, **kwargs)</pre>
+</div>
+
+<li><div class="frame" id="frame-140731874064016">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/flask_restful/__init__.py"</cite>,
+      line <em class="line">487</em>,
+      in <code class="function">dispatch_request</code></h4>
+  <pre>resp = meth(*args, **kwargs)</pre>
+</div>
+
+<li><div class="frame" id="frame-140731874066000">
+  <h4>File <cite class="filename">"/home/phil/pyrest/api.py"</cite>,
+      line <em class="line">78</em>,
+      in <code class="function">post</code></h4>
+  <pre>return write(args, whichuser(args['key']))</pre>
+</div>
+
+<li><div class="frame" id="frame-140731874065296">
+  <h4>File <cite class="filename">"/home/phil/pyrest/api.py"</cite>,
+      line <em class="line">61</em>,
+      in <code class="function">write</code></h4>
+  <pre>submits.save(to_write)</pre>
+</div>
+
+<li><div class="frame" id="frame-140731874065808">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/pymongo/collection.py"</cite>,
+      line <em class="line">281</em>,
+      in <code class="function">save</code></h4>
+  <pre>return self.insert(to_save, manipulate, safe, check_keys, **kwargs)</pre>
+</div>
+
+<li><div class="frame" id="frame-140731874064976">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/pymongo/collection.py"</cite>,
+      line <em class="line">402</em>,
+      in <code class="function">insert</code></h4>
+  <pre>gen(), check_keys, self.uuid_subtype, client)</pre>
+</div>
+
+<li><div class="frame" id="frame-140731874063888">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/pymongo/message.py"</cite>,
+      line <em class="line">358</em>,
+      in <code class="function">_do_batched_write_command</code></h4>
+  <pre>value = bson.BSON.encode(doc, check_keys, uuid_subtype)</pre>
+</div>
+
+<li><div class="frame" id="frame-140731874064912">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/bson/__init__.py"</cite>,
+      line <em class="line">590</em>,
+      in <code class="function">encode</code></h4>
+  <pre>return cls(_dict_to_bson(document, check_keys, uuid_subtype))</pre>
+</div>
+
+<li><div class="frame" id="frame-140731874065936">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/bson/__init__.py"</cite>,
+      line <em class="line">485</em>,
+      in <code class="function">_dict_to_bson</code></h4>
+  <pre>check_keys, uuid_subtype))</pre>
+</div>
+
+<li><div class="frame" id="frame-140731874064848">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/bson/__init__.py"</cite>,
+      line <em class="line">413</em>,
+      in <code class="function">_element_to_bson</code></h4>
+  <pre>return BSONOBJ + name + _dict_to_bson(value, check_keys, uuid_subtype, False)</pre>
+</div>
+
+<li><div class="frame" id="frame-140731874065552">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/bson/__init__.py"</cite>,
+      line <em class="line">485</em>,
+      in <code class="function">_dict_to_bson</code></h4>
+  <pre>check_keys, uuid_subtype))</pre>
+</div>
+
+<li><div class="frame" id="frame-140731874064208">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/bson/__init__.py"</cite>,
+      line <em class="line">360</em>,
+      in <code class="function">_element_to_bson</code></h4>
+  <pre>raise InvalidDocument(&quot;key %r must not contain '.'&quot; % key)</pre>
+</div>
+</ul>
+  <blockquote>InvalidDocument: key u'\u676d\u5dde\u5e02\u5bcc\u9633\u5e02\u5bcc\u9633\u9547\u4e8c\u4e2d (Fuyang No.2 middle school, Hangzhou) (CN:Zhejiang/\u676d\u5dde\u5e02\u5bcc\u9633\u5e02/\u5bcc\u9633\u9547\u4e8c\u4e2d)' must not contain '.'</blockquote>
+</div>
+
+<div class="plain">
+  <form action="/?__debugger__=yes&amp;cmd=paste" method="post">
+    <p>
+      <input type="hidden" name="language" value="pytb">
+      This is the Copy/Paste friendly version of the traceback.  <span
+      class="pastemessage">You can also paste this traceback into
+      a <a href="https://gist.github.com/">gist</a>:
+      <input type="submit" value="create paste"></span>
+    </p>
+    <textarea cols="50" rows="10" name="code" readonly>Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python2.7/dist-packages/flask_restful/__init__.py", line 397, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/flask_restful/__init__.py", line 487, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/phil/pyrest/api.py", line 78, in post
+    return write(args, whichuser(args['key']))
+  File "/home/phil/pyrest/api.py", line 61, in write
+    submits.save(to_write)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/collection.py", line 281, in save
+    return self.insert(to_save, manipulate, safe, check_keys, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/collection.py", line 402, in insert
+    gen(), check_keys, self.uuid_subtype, client)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/message.py", line 358, in _do_batched_write_command
+    value = bson.BSON.encode(doc, check_keys, uuid_subtype)
+  File "/usr/local/lib/python2.7/dist-packages/bson/__init__.py", line 590, in encode
+    return cls(_dict_to_bson(document, check_keys, uuid_subtype))
+  File "/usr/local/lib/python2.7/dist-packages/bson/__init__.py", line 485, in _dict_to_bson
+    check_keys, uuid_subtype))
+  File "/usr/local/lib/python2.7/dist-packages/bson/__init__.py", line 413, in _element_to_bson
+    return BSONOBJ + name + _dict_to_bson(value, check_keys, uuid_subtype, False)
+  File "/usr/local/lib/python2.7/dist-packages/bson/__init__.py", line 485, in _dict_to_bson
+    check_keys, uuid_subtype))
+  File "/usr/local/lib/python2.7/dist-packages/bson/__init__.py", line 360, in _element_to_bson
+    raise InvalidDocument("key %r must not contain '.'" % key)
+InvalidDocument: key u'\u676d\u5dde\u5e02\u5bcc\u9633\u5e02\u5bcc\u9633\u9547\u4e8c\u4e2d (Fuyang No.2 middle school, Hangzhou) (CN:Zhejiang/\u676d\u5dde\u5e02\u5bcc\u9633\u5e02/\u5bcc\u9633\u9547\u4e8c\u4e2d)' must not contain '.'</textarea>
+  </form>
+</div>
+<div class="explanation">
+  The debugger caught an exception in your WSGI application.  You can now
+  look at the traceback which led to the error.  <span class="nojavascript">
+  If you enable JavaScript you can also use additional features such as code
+  execution (if the evalex feature is enabled), automatic pasting of the
+  exceptions and much more.</span>
+</div>
+      <div class="footer">
+        Brought to you by <strong class="arthur">DON'T PANIC</strong>, your
+        friendly Werkzeug powered traceback interpreter.
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python2.7/dist-packages/flask_restful/__init__.py", line 397, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/flask_restful/__init__.py", line 487, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/phil/pyrest/api.py", line 78, in post
+    return write(args, whichuser(args['key']))
+  File "/home/phil/pyrest/api.py", line 61, in write
+    submits.save(to_write)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/collection.py", line 281, in save
+    return self.insert(to_save, manipulate, safe, check_keys, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/collection.py", line 402, in insert
+    gen(), check_keys, self.uuid_subtype, client)
+  File "/usr/local/lib/python2.7/dist-packages/pymongo/message.py", line 358, in _do_batched_write_command
+    value = bson.BSON.encode(doc, check_keys, uuid_subtype)
+  File "/usr/local/lib/python2.7/dist-packages/bson/__init__.py", line 590, in encode
+    return cls(_dict_to_bson(document, check_keys, uuid_subtype))
+  File "/usr/local/lib/python2.7/dist-packages/bson/__init__.py", line 485, in _dict_to_bson
+    check_keys, uuid_subtype))
+  File "/usr/local/lib/python2.7/dist-packages/bson/__init__.py", line 413, in _element_to_bson
+    return BSONOBJ + name + _dict_to_bson(value, check_keys, uuid_subtype, False)
+  File "/usr/local/lib/python2.7/dist-packages/bson/__init__.py", line 485, in _dict_to_bson
+    check_keys, uuid_subtype))
+  File "/usr/local/lib/python2.7/dist-packages/bson/__init__.py", line 360, in _element_to_bson
+    raise InvalidDocument("key %r must not contain '.'" % key)
+InvalidDocument: key u'\u676d\u5dde\u5e02\u5bcc\u9633\u5e02\u5bcc\u9633\u9547\u4e8c\u4e2d (Fuyang No.2 middle school, Hangzhou) (CN:Zhejiang/\u676d\u5dde\u5e02\u5bcc\u9633\u5e02/\u5bcc\u9633\u9547\u4e8c\u4e2d)' must not contain '.'
+
+-->
+
