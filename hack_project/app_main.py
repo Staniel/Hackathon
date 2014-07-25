@@ -19,25 +19,7 @@ def login_required(f):
 
 @app.route('/')
 def index():
-    return render_template('index.html',heading_pic=randint(0,13),pagename_index=True)
-@app.route('/test')
-def test():
-    return render_template('redir.html',message=u"注册成功!",tar_url=u"/login",tar_name=u"登录页面")
-@app.route('/data')
-def data():
-    return render_template('data.html',pagename_data=True)
-
-@app.route('/document')
-def document():
-    return render_template('document.html',pagename_document=True)
-
-@app.route('/openapi')
-def openapi():
-    return render_template('openapi.html',pagename_openapi=True)
-
-@app.route('/about')
-def about():
-    return render_template('about.html',pagename_about=True);
+    return render_template('page_frame.html',heading_pic=randint(0,13));
 
 @app.route('/login')
 def login_page():    

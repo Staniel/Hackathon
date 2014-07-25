@@ -1,0 +1,69 @@
+ <!-- HEADER -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>SJTU Hackathon</title>  
+  <link href="/static/libs/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/css/global.css" rel="stylesheet"> 
+
+<body ng-app="pageApp">
+   <nav ng-controller="nav_controller" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+     <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar-collapse">
+        <span class="sr-only">Toggle-navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     <a class="navbar-brand">Hackathon</a> 
+    </div>
+     <div id="main-navbar-collapse" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li ng-class="{'active':ctrName=='indexCtr'}"><a href="#/">首 页</a></li>        
+            <li ng-class="{'active':ctrName=='documentCtr'}"><a href="#/document">开发文档</a></li>
+            <li ng-class="{'active':ctrName=='openapiCtr'}"><a href="#/openapi">Open API</a></li>
+            <li ng-class="{'active':ctrName=='dataCtr'}"><a href="#/data">数据汇总</a></li>
+            <li ng-class="{'active':ctrName=='aboutCtr'}"><a href="#/about">关 于</a></li>            
+          </ul>
+          <ul class="nav navbar-nav navbar-right">            
+              <li>  <a href="/user_center"><span class="glyphicon glyphicon-home"></span> 用户中心</a></li> 
+           
+              <li>  <a href="/login" target="_blank"><span class="glyphicon glyphicon-user"> </span> 登陆</a></li> 
+              <li>  <a href="/reg" target="_blank"><span class="glyphicon glyphicon-send"> </span> 注册</a></li>           
+                 
+          </ul>
+     </div>
+    
+  </div>
+</nav>
+ <!-- HEADER -->
+
+<!-- PAGE CONTENT-->
+<div ng-view>
+
+</div>
+<!-- PAGE CONTENT-->
+
+<!-- FOOTER -->
+
+    <footer  class="footer" style="margin:0;padding:2em;background:#222;min-height:10em;color:#aaa">
+     <h4>SJTU Hackathon 2014</h4>
+      <p>© 2014 上海交通大学 网络信息中心 OmniLab</p>   
+
+     <p style="color:#666">Powered By Flask | MongoDB | Bootstrap</p>
+
+     </footer>   
+
+    <script src="/static/libs/js/jquery.min.js"></script>
+    <script src="/static/libs/js/bootstrap.min.js"></script>     
+    <script src="/static/libs/js/angular/angular.js"></script>
+    <script src="/static/libs/js/angular/angular-route.js"></script>
+    <script src="/static/js/page/controllers.js"></script>
+    <script src="/static/js/page/app.js"></script>
+  </body>
+</html>
+<!-- FOOTER -->
