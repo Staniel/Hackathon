@@ -48,20 +48,29 @@
         </tr>
       </thead>
       <tbody>
-
-      <tr>
-        <td>闵行区</td>
-        <td>{{tableData_roof.content.PM2_5}}</td>
-        <td>{{tableData_roof.content.PM10}}</td>
-        <td>{{tableData_roof.content.CO}}</td>
-        <td>{{tableData_roof.content.NO2}}</td>
-        <td>{{tableData_roof.content.O3}}</td>
-        <td>{{tableData_roof.content.SO2}}</td>
-     </tr>            
+        <tr ng-show="tableData_roof.content" class="warning ">
+          <td>闵行区</td>
+          <td>{{tableData_roof.content.PM2_5}}</td>
+          <td>{{tableData_roof.content.PM10}}</td>
+          <td>{{tableData_roof.content.CO}}</td>
+          <td>{{tableData_roof.content.NO2}}</td>
+          <td>{{tableData_roof.content.O3}}</td>
+          <td>{{tableData_roof.content.SO2}}</td>
+        </tr>     
+        <tr ng-repeat="(key,value) in tableData_shanghai.content">
+          <td>{{key}}</td>
+          <td>{{value.PM2_5}}</td>
+          <td>{{value.PM10}}</td>
+          <td>{{value.CO}}</td>
+          <td>{{value.NO2}}</td>
+          <td>{{value.O3}}</td>
+          <td>{{value.SO2}}</td>
+        </tr>
+            
             
       </tbody>
     </table>
-    <p class="update-time">更新时间 <span id="update-time-span">00:00:00</span><p>
+    <p class="update-time">更新时间 <span id="update-time-span">{{tableUpdateTime}}</span><p>
   </div>
 
   <div class="panel panel-primary">
@@ -82,7 +91,9 @@
        </div>    
        
          <div id="charts-controller"></div>
-        <div id="charts-container1" style="Height:400px"></div>      
+        <div id="charts-container1" style="Height:400px">
+          <highchart config="chartConfig"></highchart>
+        </div>      
      
   </div>
   </div>

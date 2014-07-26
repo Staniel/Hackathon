@@ -1,5 +1,5 @@
 // pageApp app.js
-var app = angular.module('pageApp', ["ngRoute"]);
+var app = angular.module('pageApp', ["ngRoute","highcharts-ng"]);
 
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {

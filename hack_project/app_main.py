@@ -19,7 +19,7 @@ def login_required(f):
 
 @app.route('/')
 def index():
-    return render_template('page_frame.html',heading_pic=randint(0,13));
+    return render_template('page_app.html');
 
 @app.route('/login')
 def login_page():    
