@@ -14,7 +14,7 @@ function indexCtr ($scope,$http,$window) {
         var v = jsTime.valueOf();
         return new Date(v-(v+28800000)%86400000);
     };
-    var todayBound=getDayBound_UTC8(new Date()).toISOString();
+
     $scope.renderChart=function(roof,shanghai){ 
       var tmpDataObj={CO:{},NO2:{},O3:{},PM2_5:{},PM10:{},SO2:{}}; 
     //  console.log(roof);
@@ -35,8 +35,6 @@ function indexCtr ($scope,$http,$window) {
            }         
         }
       }
-
-
        for(var i in roof){
         var time=new Date(roof[i].submitted_on);    
           for(var type in roof[i].content){
@@ -66,6 +64,8 @@ function indexCtr ($scope,$http,$window) {
       $scope.chartArray=chartArray;
       $scope.chartConfig.series=$scope.chartArray.CO;
     }
+
+    var todayBound=getDayBound_UTC8(new Date()).toISOString();
     $http({url:"http://10.50.6.70:8080/data/find",method:"post",params:{key:"TANGTOU",submitted_after:todayBound}}).success(
          function(data){
                console.log("roofData Loaded.");
@@ -85,6 +85,7 @@ function indexCtr ($scope,$http,$window) {
                     $scope.renderChart($scope.roofData,$scope.shanghaiData);
                  });
         });
+    
 $scope.chartConfig = {
     options:{ 
             credits:{
