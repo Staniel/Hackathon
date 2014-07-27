@@ -7,8 +7,48 @@ function nav_controller($scope,$rootScope){
 }      
 function indexCtr ($scope,$http,$window) { 
     Highcharts.setOptions({global: {useUTC: false}});
-    $.getScript("/static/libs/js/bootstrap-datetimepicker.min.js");
-    $.getScript("/static/libs/js/spin.min.js");
+    $.getScript("/static/libs/js/bootstrap-datetimepicker.min.js",function(){
+       $('#date-picker').datetimepicker({
+        format:"yyyy-mm-dd",
+        startDate: "2014-4-9",
+        weekStart: 1,        
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0
+        }).on('changeDate', function(ev){
+           var v=ev.date.valueOf();
+           v=(v-v%86400000)-28800000;
+           console.log(new Date(v));
+
+       });
+      var dt=new Date();
+      $("#date-picker-input").attr("value",(dt.getFullYear() + '-' + (dt.getMonth() + 1) + '-' + dt.getDate()).replace(/([\-\: ])(\d{1})(?!\d)/g, '$10$2'));
+
+    });
+    $.getScript("/static/libs/js/spin.min.js",function(){
+        var opts = {
+          lines: 11, // The number of lines to draw
+          length: 10, // The length of each line
+          width: 5, // The line thickness
+          radius: 15, // The radius of the inner circle
+          corners: 1, // Corner roundness (0..1)
+          rotate: 0, // The rotation offset
+          direction: 1, // 1: clockwise, -1: counterclockwise
+          color: '#000', // #rgb or #rrggbb or array of colors
+          speed: 1, // Rounds per second
+          trail: 60, // Afterglow percentage
+          shadow: false, // Whether to render a shadow
+          hwaccel: false, // Whether to use hardware acceleration
+          className: 'spinner', // The CSS class to assign to the spinner
+          zIndex: 2e9, // The z-index (defaults to 2000000000)
+          top: 'auto', // Top position relative to parent in px
+          left: 'auto' // Left position relative to parent in px
+      };
+     spindiv=document.getElementById('loading-spin');
+     spinner = new Spinner(opts);
+    });
     $scope.randomHeading={background:"url('/static/img/rand_h/"+Math.round(Math.random()*29)%14+".jpg') center"};
     function getDayBound_UTC8(jsTime){ //divide By TimeZone UTC+8:00
         var v = jsTime.valueOf();
