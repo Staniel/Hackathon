@@ -11,16 +11,37 @@ function indexCtr ($scope,$http,$window) {
        $('#date-picker').datetimepicker({
         format:"yyyy-mm-dd",
         startDate: "2014-4-9",
-        weekStart: 1,        
+        weekStart: 1,         
         autoclose: 1,
         todayHighlight: 1,
         startView: 2,
         minView: 2,
         forceParse: 0
         }).on('changeDate', function(ev){
+           if(typeof(spinner)!="undefined")
+               spinner.spin(spindiv)
            var v=ev.date.valueOf();
            v=(v-v%86400000)-28800000;
-           console.log(new Date(v));
+           var b1=(new Date(v)).toISOString();
+           var b2=(new Date(v+86400000)).toISOString();
+           $http({url:"http://10.50.6.70:8080/data/find",method:"post",params:{key:"TANGTOU",submitted_after:b1,submitted_before:b2}}).success(
+         function(data){
+            if(data.length<1) {
+              if(typeof(spinner)!="undefined")
+                  spinner.stop()    
+              alert("似乎没有那天的数据");
+              $scope.chartConfig.series=[];
+              return;
+            }
+            $scope.roofData=data;
+            $http({url:"http://10.50.6.70:8080/data/find",method:"post",params:{key:"BAZHE",submitted_after:b1,submitted_before:b2}}).success(
+         function(data){
+            if(typeof(spinner)!="undefined")
+                spinner.stop()    
+            $scope.shanghaiData=data;
+            $scope.renderChart($scope.roofData,$scope.shanghaiData);            
+            });
+         });
 
        });
       var dt=new Date();
@@ -49,6 +70,12 @@ function indexCtr ($scope,$http,$window) {
      spindiv=document.getElementById('loading-spin');
      spinner = new Spinner(opts);
     });
+    $scope.switchChart=function(id){
+      if(!$scope.chartArray[id])
+        return;
+      $scope.currentChartID=id;
+      $scope.chartConfig.series=$scope.chartArray[id];
+    }
     $scope.randomHeading={background:"url('/static/img/rand_h/"+Math.round(Math.random()*29)%14+".jpg') center"};
     function getDayBound_UTC8(jsTime){ //divide By TimeZone UTC+8:00
         var v = jsTime.valueOf();
@@ -99,16 +126,14 @@ function indexCtr ($scope,$http,$window) {
                 continue;              
               chartArray[type].push({name:station,data:tmpDataObj[type][station]});      
            }
-      }
-     
+      }     
       $scope.chartArray=chartArray;
-      $scope.chartConfig.series=$scope.chartArray.CO;
+      $scope.switchChart("CO");
     }
 
     var todayBound=getDayBound_UTC8(new Date()).toISOString();
     $http({url:"http://10.50.6.70:8080/data/find",method:"post",params:{key:"TANGTOU",submitted_after:todayBound}}).success(
          function(data){
-               console.log("roofData Loaded.");
                if(data.length>0){
                  $scope.tableData_roof=data[data.length-1];
                  $scope.tableUpdateTime=(new Date(data[data.length-1].submitted_on)).toLocaleTimeString();
@@ -117,7 +142,6 @@ function indexCtr ($scope,$http,$window) {
 
                 $http({url:"http://10.50.6.70:8080/data/find",method:"post",params:{key:"BAZHE",submitted_after:todayBound}}).success(
                    function(data){
-                      console.log("shanghaiData Loaded.");
                       if(data.length>0){
                       $scope.tableData_shanghai=data[data.length-1];
                     }            
@@ -154,40 +178,6 @@ $scope.chartConfig = {
         },              
         series: []
         };
-
- /*   $.ajax({
-              type: "POST",
-              url: "http://10.50.6.70:8080/data/find",
-              timeout: 3000, 
-              data: {  
-                        "key":"TANGTOU",
-                        "submitted_after":todayBound.toISOString()
-              },
-              success: function(data) { 
-               console.log("roofData Loaded.");
-               if(data.length>0)
-                    $scope.tableData_roof=data[data.length-1];
-                console.log($scope.tableData_roof);
-               $scope.roofData=data;
-               console.log($scope.tableData_roof.content.PM2_5);
-              },
-          });
-
-    $.ajax({
-              type: "POST",
-              url: "http://10.50.6.70:8080/data/find",
-              timeout: 3000, 
-              data: {  
-                        "key":"BAZHE",
-                        "submitted_after":todayBound.toISOString()
-              },
-              success: function(data) {
-               console.log("shanghai DataLoaded");
-               if(data.length>0)
-                    $scope.tableData_shanghai=data[data.length-1];
-               $scope.shanghaiData=data;
-              },
-          });*/
 }
 
 function documentCtr($scope){}

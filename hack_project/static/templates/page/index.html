@@ -90,7 +90,11 @@
               <input type="hidden" id="dtp_input2" value="" /><br/>             
        </div>    
        
-         <div id="charts-controller"></div>
+         <div id="charts-controller">
+            <div class="btn-group">
+              <button ng-repeat="(key,value) in chartArray" type="button" id="button-PM2_5" ng-click="switchChart(this.key)" class="btn charts-button btn-default" ng-class="{'btn-primary':currentChartID==this.key}">{{key}}</button>
+              </div>
+         </div>
         <div id="charts-container1" style="Height:400px">
           <highchart config="chartConfig"></highchart>
         </div>      
