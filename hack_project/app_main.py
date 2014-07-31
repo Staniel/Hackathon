@@ -19,7 +19,7 @@ def login_required(f):
 
 @app.route('/')
 def index():
-    return render_template('page_app.html');
+    return app.send_static_file('templates/page_app.html');
 
 @app.route('/login')
 def login_page():    
@@ -103,8 +103,11 @@ def logout():
 
 @app.route('/user_center/')
 @login_required
-def user_center():   
-    return render_template('user_center/frame.html');
+def user_center():       
+    return app.send_static_file('templates/user_center_app.html')
+    #return render_template('user_center_app.html');
+
+'''
 @app.route('/user_center/action',methods=['POST'])
 def user_center_action():
     try:
@@ -120,3 +123,4 @@ def user_center_page(pagename):
     if(pagename=="acc_settings"):    
         g.user=DBconnection.UserModel.find_one({"Email":session['user']['Email']})      
     return render_template('user_center/page/'+pagename+'.html')
+'''

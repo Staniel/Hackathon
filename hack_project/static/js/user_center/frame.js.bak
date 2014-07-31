@@ -87,9 +87,7 @@ $(document).ready(function() {
         left: 'auto'
     };
     page_spinner = new Spinner(opts);
-    menu_obj = $("#menu-list");
-    menu_obj.on("click", "li", mainItemHandler);
-    menu_obj.on("click", "a.list-group-item", subItemHandler);
+    
     if (window.location.hash.length < 2)
      {
         $("#menu_pandect").click();
