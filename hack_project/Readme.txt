@@ -1,8 +1,15 @@
-﻿--------- Hackathon Flask Project 说明 ---------
+﻿--------- Hackathon Project 说明 ---------
+** 概述 **
+后端采用Flask,前端使用angularJS
+后端Flask负责提供各种API及支持用户登录注册等特性, 不使用其MVC
+前端使用angularJS的MVC特性,目前分为两个angular app,分别是 
+(1)pageApp:是页面内容,即无需登录就可以看到的内容,包括开发文档, 关于等内容
+(2)user_centerApp:用户中心.用户登录后可用的管理功能
+前端还引入了其他库,如BootStrap,jQuery等
 
 ** 文件清单 **
 	app.main.py 
-		主程序文件
+		后端主程序文件
 	run.py
 		运行本地服务器(Debug用)
 	Readme.txt
@@ -10,14 +17,16 @@
 	site.wsgi
 		mod_wsgi配置文件
 	hack_project_libs/
-		模块目录
+		py模块目录
 	static/
-		静态文件(css,js,img)目录
+		静态文件目录,包括前端所用到的资源以及angularJS的MVC
+	static/templates
+		angualrJS模板目录
 	templates/
-		模板目录
+		flask模板目录,这个目录应该会被逐渐废弃
 
 
-** 运行所需组件 **
+** flask运行所需组件 **
 
 	(1)python2.7
 		略

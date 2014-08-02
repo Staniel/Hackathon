@@ -39,12 +39,12 @@
       <thead>
         <tr>
           <th>监测点</th>        
-          <th>PM2.5 细颗粒物</th>
-          <th>PM10 可吸入颗粒物</th>
-          <th>CO 一氧化碳</th>
-          <th>NO2 二氧化氮</th>
-          <th>O3 臭氧</th>          
-          <th>SO2 二氧化硫</th>
+          <th>PM2.5 细颗粒物 μg/m³</th>
+          <th>PM10 可吸入颗粒物 μg/m³</th>
+          <th>CO 一氧化碳 mg/m³</th>
+          <th>NO2 二氧化氮 μg/m³</th>
+          <th>O3 臭氧 μg/m³</th>          
+          <th>SO2 二氧化硫 μg/m³</th>
         </tr>
       </thead>
       <tbody>
@@ -92,13 +92,12 @@
        
          <div id="charts-controller">
             <div class="btn-group">
-              <button ng-repeat="(key,value) in chartArray" type="button" id="button-PM2_5" ng-click="switchChart(this.key)" class="btn charts-button btn-default" ng-class="{'btn-primary':currentChartID==this.key}">{{key}}</button>
+              <button ng-repeat="(key,value) in chartArray" type="button" ng-click="switchChart(this.key)" class="btn charts-button btn-default" ng-class="{'btn-primary':currentChartID==this.key}">{{key}}</button>
               </div>
          </div>
-        <div id="charts-container1" style="Height:400px">
+        
           <highchart config="chartConfig"></highchart>
-        </div>      
-     
+          <p>注:  CO数值单位为mg/m³,其余为μg/m³</p> 
   </div>
   </div>
 

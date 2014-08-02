@@ -182,5 +182,66 @@ $scope.chartConfig = {
 
 function documentCtr($scope){}
 function openapiCtr($scope){}
-function dataCtr($scope){}
+function dataCtr($scope,$routeParams,$window,$http){
+  $scope.showMsg=true;
+  $scope.msg="还没有查询";
+  $scope.keyMapArray=["KEN","PM25","AQICN","KEEWIFI"];
+  $scope.currentKey=$routeParams.key;
+  $scope.timeGap=1;
+  var dt=new Date();
+  $("#date-picker-input").attr("value",(dt.getFullYear() + '-' + (dt.getMonth() + 1) + '-' + dt.getDate()).replace(/([\-\: ])(\d{1})(?!\d)/g, '$10$2'));
+  var v=(new Date()).valueOf(); 
+  $scope.timeStart=v-(v+28800000)%86400000;
+  $scope.switchTo=function(key){
+    $window.location.hash="#/data/"+key;
+  }
+  $.getScript("/static/libs/js/bootstrap-datetimepicker.min.js",function(){
+        $('#date-picker').datetimepicker({
+        format:"yyyy-mm-dd",
+        startDate: "2014-4-9",
+        weekStart: 1,         
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0
+        }).on('changeDate', function(ev){
+           var v=ev.date.valueOf();
+           $scope.timeStart=v-(v+28800000)%86400000;
+  });
+              
+          
+
+});
+  $scope.doQuery=function(){  
+    if($scope.Querying){
+    if(!confirm("有查询请求尚未返回,仍进行新的查询?"))
+        return;
+    }
+    $scope.Querying=true;
+    var b1=(new Date($scope.timeStart)).toISOString();
+    var b2=(new Date($scope.timeStart+Number($scope.timeGap)*86400000)).toISOString();
+    var info="  - KEY=" + $scope.currentKey +" | TIME-LIMIT="+ b1 +"~"+ b2;
+    console.log(info);
+    $scope.msg="请求数据中,请稍候....";   
+    $http({url:"http://10.50.6.70:8080/data/find",method:"post",params:{key:$scope.currentKey,submitted_after:b1,submitted_before:b2}}).success(
+         function(data){
+            $scope.Querying=false;
+            console.log(data);         
+            $scope.msg="查询结果: "+ data.length + "条记录."+ info;       
+            if(data.length>0)
+            {
+              switch($scope.currentKey){
+                case "KEEWIFI":
+                   $scope.httpData_KEEWIFI=data;
+                break;
+                default:$scope.msg+=" ###数据来源未能识别,无法显示###";
+              }
+            }
+
+           
+       });
+
+  }
+}
 function aboutCtr($scope){}

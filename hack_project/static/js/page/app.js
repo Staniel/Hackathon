@@ -10,7 +10,7 @@ app.config(['$routeProvider', function($routeProvider) {
     controller:openapiCtr,
     templateUrl:'/static/templates/page/openapi.html'
   }).
-  when('/data', {
+  when('/data/:key', {
     controller:dataCtr,
     templateUrl:'/static/templates/page/data.html'
   }).
