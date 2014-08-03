@@ -183,10 +183,10 @@ $scope.chartConfig = {
 function documentCtr($scope){}
 function openapiCtr($scope){}
 function dataCtr($scope,$routeParams,$window,$http){
-  $scope.httpData={};
-  //$scope.showMapDiv=true;
+  
   $scope.msg="还没有查询";
   $scope.keyMapArray=["KEN","PM25","AQICN","KEEWIFI"];
+
   $scope.currentKey=$routeParams.key;
   if($scope.currentKey=="PM25"){
      $scope.showMapDiv=true;
@@ -199,6 +199,7 @@ function dataCtr($scope,$routeParams,$window,$http){
   $scope.switchTo=function(key){
     $window.location.hash="#/data/"+key;
   }
+  $scope.httpData={};
   $scope.httpDataRenderer={
     "PM25":function(){
             var idx;
@@ -211,6 +212,7 @@ function dataCtr($scope,$routeParams,$window,$http){
           },
     "KEEWIFI":function(){},
   };
+
   $window.bmapCallback=function(){
     console.log("BMAP loaded.");
     $scope.bmap = new BMap.Map("mapDiv");           
@@ -272,4 +274,6 @@ function dataCtr($scope,$routeParams,$window,$http){
 
   }
 }
-function aboutCtr($scope){}
+function aboutCtr($scope){
+  
+}
