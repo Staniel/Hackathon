@@ -1,4 +1,5 @@
 ﻿--------- Hackathon Project 说明 ---------
+
 ** 概述 **
 后端采用Flask,前端使用angularJS
 后端Flask负责提供各种API及支持用户登录注册等特性, 不使用其MVC

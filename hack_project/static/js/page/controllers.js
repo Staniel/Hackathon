@@ -183,10 +183,14 @@ $scope.chartConfig = {
 function documentCtr($scope){}
 function openapiCtr($scope){}
 function dataCtr($scope,$routeParams,$window,$http){
-  $scope.showMsg=true;
+  $scope.httpData={};
+  //$scope.showMapDiv=true;
   $scope.msg="还没有查询";
   $scope.keyMapArray=["KEN","PM25","AQICN","KEEWIFI"];
   $scope.currentKey=$routeParams.key;
+  if($scope.currentKey=="PM25"){
+     $scope.showMapDiv=true;
+  }
   $scope.timeGap=1;
   var dt=new Date();
   $("#date-picker-input").attr("value",(dt.getFullYear() + '-' + (dt.getMonth() + 1) + '-' + dt.getDate()).replace(/([\-\: ])(\d{1})(?!\d)/g, '$10$2'));
@@ -195,6 +199,28 @@ function dataCtr($scope,$routeParams,$window,$http){
   $scope.switchTo=function(key){
     $window.location.hash="#/data/"+key;
   }
+  $scope.httpDataRenderer={
+    "PM25":function(){
+            var idx;
+            if(typeof($scope.resQueryIndex)=="undefined")
+              idx=$scope.httpData.PM25.length-1;
+            else
+              idx=$scope.resQueryIndex;
+            $scope.subMsg="当前显示数据: " + (new Date($scope.httpData.PM25[idx].submitted_on)).toLocaleString();
+            console.log($scope.httpData.PM25[idx]);
+          },
+    "KEEWIFI":function(){},
+  };
+  $window.bmapCallback=function(){
+    console.log("BMAP loaded.");
+    $scope.bmap = new BMap.Map("mapDiv");           
+    $scope.bmap.centerAndZoom(new BMap.Point(105,38),5);        
+    $scope.bmap.addControl(new BMap.NavigationControl()); 
+    $scope.bmap.addControl(new BMap.ScaleControl());           
+   // $scope.bmap .enableScrollWheelZoom();
+  
+  }
+  $.getScript("http://api.map.baidu.com/api?v=2.0&ak=DN45Mol7VgheNf5yG2MVQbuw&callback=bmapCallback");
   $.getScript("/static/libs/js/bootstrap-datetimepicker.min.js",function(){
         $('#date-picker').datetimepicker({
         format:"yyyy-mm-dd",
@@ -209,37 +235,39 @@ function dataCtr($scope,$routeParams,$window,$http){
            var v=ev.date.valueOf();
            $scope.timeStart=v-(v+28800000)%86400000;
   });
-              
-          
-
 });
+
   $scope.doQuery=function(){  
+    if($scope.currentKey=="_")
+    {
+      alert("请先选择一个数据来源");
+      return;
+    }
     if($scope.Querying){
     if(!confirm("有查询请求尚未返回,仍进行新的查询?"))
         return;
     }
+    
     $scope.Querying=true;
+    $scope.msg="请求数据中,请稍候....";   
+    $scope.subMsg=undefined;
     var b1=(new Date($scope.timeStart)).toISOString();
     var b2=(new Date($scope.timeStart+Number($scope.timeGap)*86400000)).toISOString();
     var info="  - KEY=" + $scope.currentKey +" | TIME-LIMIT="+ b1 +"~"+ b2;
     console.log(info);
-    $scope.msg="请求数据中,请稍候....";   
     $http({url:"http://10.50.6.70:8080/data/find",method:"post",params:{key:$scope.currentKey,submitted_after:b1,submitted_before:b2}}).success(
          function(data){
+            $scope.resQueryIndex=undefined;
             $scope.Querying=false;
             console.log(data);         
-            $scope.msg="查询结果: "+ data.length + "条记录."+ info;       
-            if(data.length>0)
-            {
-              switch($scope.currentKey){
-                case "KEEWIFI":
-                   $scope.httpData_KEEWIFI=data;
-                break;
-                default:$scope.msg+=" ###数据来源未能识别,无法显示###";
-              }
+            $scope.msg="查询结果: "+ data.length + "条记录."+ info; 
+            $scope.httpData[$scope.currentKey]=data;
+            if(!$scope.httpDataRenderer[$scope.currentKey]){
+              $scope.subMsg=" ###数据来源未能识别,无法显示###";
             }
-
-           
+            else{
+              $scope.httpDataRenderer[$scope.currentKey]();
+            }   
        });
 
   }
