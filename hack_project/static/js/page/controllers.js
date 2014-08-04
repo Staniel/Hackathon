@@ -182,47 +182,94 @@ $scope.chartConfig = {
 
 function documentCtr($scope){}
 function openapiCtr($scope){}
-function dataCtr($scope,$routeParams,$window,$http){
-  
-  $scope.msg="还没有查询";
-  $scope.keyMapArray=["KEN","PM25","AQICN","KEEWIFI"];
 
+function dataCtr($scope,$routeParams,$window,$http){  
+  $scope.msg="还没有查询";
   $scope.currentKey=$routeParams.key;
-  if($scope.currentKey=="PM25"){
-     $scope.showMapDiv=true;
-  }
   $scope.timeGap=1;
   var dt=new Date();
   $("#date-picker-input").attr("value",(dt.getFullYear() + '-' + (dt.getMonth() + 1) + '-' + dt.getDate()).replace(/([\-\: ])(\d{1})(?!\d)/g, '$10$2'));
-  var v=(new Date()).valueOf(); 
+  var v=dt.valueOf(); 
   $scope.timeStart=v-(v+28800000)%86400000;
   $scope.switchTo=function(key){
     $window.location.hash="#/data/"+key;
   }
   $scope.httpData={};
-  $scope.httpDataRenderer={
-    "PM25":function(){
+  $scope.httpDataRenderAdapter={};
+
+  $scope.httpDataRenderAdapter.PM25=function(){
+            $scope.bmap.clearOverlays();
+            if(!$scope.httpData.PM25||$scope.httpData.PM25.length<1){
+              $scope.subMsg="没有要展示的数据";
+              return;
+            }   
             var idx;
             if(typeof($scope.resQueryIndex)=="undefined")
               idx=$scope.httpData.PM25.length-1;
             else
               idx=$scope.resQueryIndex;
-            $scope.subMsg="当前显示数据: " + (new Date($scope.httpData.PM25[idx].submitted_on)).toLocaleString();
-            console.log($scope.httpData.PM25[idx]);
-          },
-    "KEEWIFI":function(){},
-  };
+            
+            if(!$scope.httpData.PM25[idx].content.length){             
+              console.log($scope.httpData.PM25[idx]); 
+              $scope.subMsg="选中的数据分组未通过验证,无法显示,已输出到console. (仅支持显示8/4/2014 6:16:40之后的数据)";
+              $scope.currentResDispIdx=-1;
+              return;
+            }
+            $scope.currentResDispIdx=idx;
+            $scope.subMsg="当前显示数据: [" + idx +"] "+(new Date($scope.httpData.PM25[idx].submitted_on)).toLocaleString();
 
-  $window.bmapCallback=function(){
-    console.log("BMAP loaded.");
-    $scope.bmap = new BMap.Map("mapDiv");           
-    $scope.bmap.centerAndZoom(new BMap.Point(105,38),5);        
-    $scope.bmap.addControl(new BMap.NavigationControl()); 
-    $scope.bmap.addControl(new BMap.ScaleControl());           
-   // $scope.bmap .enableScrollWheelZoom();
-  
+            function makeInfoWindow(cityIdx){
+              var htmlStr="<b>"+$scope.httpData.PM25[idx].content[cityIdx].city+"</b><table class='table' style='font-size:12px'><thead><tr><th>站点</th><th>CO</th><th>NO2</th><th>O3</th><th>PM2_5</th><th>PM10</th><th>SO2</th></tr></thead><tbody>";        
+              for(var stationIdx in $scope.httpData.PM25[idx].content[cityIdx].stations) {
+                htmlStr+=(  
+                  "<tr><td>" +
+                  $scope.httpData.PM25[idx].content[cityIdx].stations[stationIdx].name +
+                  "</td><td>" +
+                  $scope.httpData.PM25[idx].content[cityIdx].stations[stationIdx].data.CO +
+                  "</td><td>" +
+                  $scope.httpData.PM25[idx].content[cityIdx].stations[stationIdx].data.NO2 +
+                  "</td><td>" +
+                  $scope.httpData.PM25[idx].content[cityIdx].stations[stationIdx].data.O3 +
+                  "</td><td>" +
+                  $scope.httpData.PM25[idx].content[cityIdx].stations[stationIdx].data.PM2_5 +
+                  "</td><td>" +
+                  $scope.httpData.PM25[idx].content[cityIdx].stations[stationIdx].data.PM10 +
+                  "</td><td>" +
+                  $scope.httpData.PM25[idx].content[cityIdx].stations[stationIdx].data.SO2 +
+                  "</td></tr>"
+                );
+              }
+              htmlStr+="</tbody></table>";                       
+              return (new BMap.InfoWindow(htmlStr));  
+            }
+            for(var cityIdx in $scope.httpData.PM25[idx].content){ 
+                    if(!$scope.httpData.PM25[idx].content[cityIdx].location)
+                      continue;
+                    var point = new BMap.Point($scope.httpData.PM25[idx].content[cityIdx].location.lng,$scope.httpData.PM25[idx].content[cityIdx].location.lat);
+                    var marker = new BMap.Marker(point,{title:$scope.httpData.PM25[idx].content[cityIdx].city});
+                    marker._cityIdx_= cityIdx;
+                    marker.addEventListener("click", function(){                                                
+                        this.openInfoWindow(makeInfoWindow(this._cityIdx_));  
+                    });  
+                   $scope.bmap.addOverlay(marker);
+            }     
+   };
+  $scope.httpDataRenderAdapter.KEN = function(){};
+  $scope.httpDataRenderAdapter.KEEWIFI=function(){};
+  if($scope.currentKey=="PM25"){  //require BaiduMap
+      $scope.showMapDiv=true;
+      $window.bmapCallback=function(){
+        console.log("BMAP loaded.");
+        $scope.bmap = new BMap.Map("mapDiv");           
+        $scope.bmap.centerAndZoom(new BMap.Point(105,38),5);        
+        $scope.bmap.addControl(new BMap.NavigationControl()); 
+        $scope.bmap.addControl(new BMap.ScaleControl());   
+      }
+      $.getScript("http://api.map.baidu.com/api?v=2.0&ak=DN45Mol7VgheNf5yG2MVQbuw&callback=bmapCallback");
   }
-  $.getScript("http://api.map.baidu.com/api?v=2.0&ak=DN45Mol7VgheNf5yG2MVQbuw&callback=bmapCallback");
+
+
+
   $.getScript("/static/libs/js/bootstrap-datetimepicker.min.js",function(){
         $('#date-picker').datetimepicker({
         format:"yyyy-mm-dd",
@@ -246,10 +293,12 @@ function dataCtr($scope,$routeParams,$window,$http){
       return;
     }
     if($scope.Querying){
-    if(!confirm("有查询请求尚未返回,仍进行新的查询?"))
+      if(!confirm("有查询请求尚未返回,仍进行新的查询?"))
         return;
-    }
-    
+    }    
+    $scope.resQueryIndex=undefined;
+    $scope.httpData={};
+    $scope.currentResDispIdx=-1;
     $scope.Querying=true;
     $scope.msg="请求数据中,请稍候....";   
     $scope.subMsg=undefined;
@@ -258,20 +307,18 @@ function dataCtr($scope,$routeParams,$window,$http){
     var info="  - KEY=" + $scope.currentKey +" | TIME-LIMIT="+ b1 +"~"+ b2;
     console.log(info);
     $http({url:"http://10.50.6.70:8080/data/find",method:"post",params:{key:$scope.currentKey,submitted_after:b1,submitted_before:b2}}).success(
-         function(data){
-            $scope.resQueryIndex=undefined;
+         function(data){            
             $scope.Querying=false;
             console.log(data);         
             $scope.msg="查询结果: "+ data.length + "条记录."+ info; 
             $scope.httpData[$scope.currentKey]=data;
-            if(!$scope.httpDataRenderer[$scope.currentKey]){
+            if(!$scope.httpDataRenderAdapter[$scope.currentKey]){
               $scope.subMsg=" ###数据来源未能识别,无法显示###";
             }
             else{
-              $scope.httpDataRenderer[$scope.currentKey]();
+              $scope.httpDataRenderAdapter[$scope.currentKey]();
             }   
        });
-
   }
 }
 function aboutCtr($scope){

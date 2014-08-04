@@ -29,6 +29,6 @@ app.filter('TOLOCAL',function(){
     return function(item){
         if(!item)
           return false;
-        return (new Date(item)).valueOf();  
+        return (new Date(item)).toLocaleString();  
     }
 }); 
