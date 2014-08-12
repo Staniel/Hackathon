@@ -1,0 +1,1569 @@
+
+----2014-07-15 00:15:52----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-15 13:00:58----
+(pm25in_1st request)<urlopen error timed out>
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-15 14:25:16----
+'ascii' codec can't encode characters in position 2-3: ordinal not in range(128)
+
+----2014-07-15 14:33:41----
+'ascii' codec can't encode characters in position 2-3: ordinal not in range(128)
+
+----2014-07-15 14:45:41----
+'ascii' codec can't encode characters in position 2-3: ordinal not in range(128)
+
+----2014-07-15 14:52:25----
+'ascii' codec can't encode characters in position 2-3: ordinal not in range(128)
+
+----2014-07-15 14:57:37----
+
+----2014-07-15 14:58:02----
+
+----2014-07-15 14:59:09----
+
+----2014-07-15 15:06:37----
+
+----2014-07-15 15:17:09----
+
+----2014-07-15 15:27:55----
+
+----2014-07-15 15:28:49----
+[Errno 9] Bad file descriptor
+
+----2014-07-15 15:30:09----
+
+----2014-07-15 15:42:46----
+HTTP Error 400: BAD REQUEST
+
+----2014-07-15 15:51:11----
+HTTP Error 400: BAD REQUEST
+
+----2014-07-15 15:55:59----
+HTTP Error 400: BAD REQUEST
+
+----2014-07-15 16:04:58----
+
+----2014-07-15 16:09:12----
+No JSON object could be decoded
+
+----2014-07-15 16:15:26----
+No JSON object could be decoded
+
+----2014-07-15 16:17:32----
+
+----2014-07-15 16:18:06----
+
+----2014-07-15 16:18:41----
+__init__() got an unexpected keyword argument 'ensure_ascii'
+
+----2014-07-15 16:18:58----
+No JSON object could be decoded
+
+----2014-07-15 16:22:30----
+expected string or buffer
+
+----2014-07-15 16:23:01----
+No JSON object could be decoded
+
+----2014-07-15 16:24:23----
+No JSON object could be decoded
+
+----2014-07-15 16:30:51----
+
+----2014-07-15 16:32:14----
+'ascii' codec can't encode characters in position 2-3: ordinal not in range(128)
+
+----2014-07-15 16:37:45----
+
+----2014-07-15 16:40:48----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-15 17:05:11----
+HTTP Error 500: INTERNAL SERVER ERROR
+
+----2014-07-15 17:18:34----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-15 17:23:49----
+HTTP Error 400: BAD REQUEST
+
+----2014-07-15 19:30:08----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-21 16:44:11----
+(pm25in_2nd request)<urlopen error timed out>
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-21 17:28:50----
+'lng'
+
+----2014-07-21 17:29:14----
+'lng'
+
+----2014-07-21 17:33:47----
+(pm25in_1st request)<urlopen error [Errno 11004] getaddrinfo failed>
+<urlopen error [Errno 11004] getaddrinfo failed>
+
+----2014-07-21 17:34:07----
+'lng'
+
+----2014-07-21 17:35:22----
+'lng'
+
+----2014-07-21 17:35:54----
+'lng'
+
+----2014-07-21 17:36:56----
+(baidumap api request)<urlopen error timed out>
+'NoneType' object is not callable
+
+----2014-07-21 18:06:11----
+
+----2014-07-21 18:11:35----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-22 11:55:55----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-22 14:48:15----
+(pm25in_1st request)<urlopen error timed out>
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-22 14:57:23----
+name 'urllib' is not defined
+
+----2014-07-22 15:04:29----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-22 15:16:23----
+string indices must be integers
+
+----2014-07-22 15:17:12----
+string indices must be integers
+
+----2014-07-22 15:18:30----
+string indices must be integers
+
+----2014-07-22 15:19:10----
+string indices must be integers
+
+----2014-07-22 15:19:31----
+string indices must be integers
+
+----2014-07-22 15:25:01----
+string indices must be integers
+
+----2014-07-22 15:37:54----
+string indices must be integers
+
+----2014-07-22 15:52:03----
+string indices must be integers
+
+----2014-07-22 16:25:01----
+string indices must be integers
+
+----2014-07-22 16:27:39----
+string indices must be integers
+
+----2014-07-22 17:25:01----
+string indices must be integers
+
+----2014-07-22 18:25:01----
+string indices must be integers
+
+----2014-07-22 19:25:01----
+string indices must be integers
+
+----2014-07-22 20:25:01----
+string indices must be integers
+
+----2014-07-22 21:25:01----
+string indices must be integers
+
+----2014-07-22 21:34:02----
+string indices must be integers
+
+----2014-07-22 22:25:01----
+string indices must be integers
+
+----2014-07-22 23:25:01----
+string indices must be integers
+
+----2014-07-23 00:25:01----
+string indices must be integers
+
+----2014-07-23 01:25:01----
+string indices must be integers
+
+----2014-07-23 02:25:01----
+string indices must be integers
+
+----2014-07-23 03:25:01----
+string indices must be integers
+
+----2014-07-23 04:25:01----
+string indices must be integers
+
+----2014-07-23 05:25:01----
+string indices must be integers
+
+----2014-07-23 06:25:01----
+string indices must be integers
+
+----2014-07-23 07:25:01----
+string indices must be integers
+
+----2014-07-23 08:25:01----
+string indices must be integers
+
+----2014-07-23 09:25:01----
+string indices must be integers
+
+----2014-07-23 10:25:01----
+string indices must be integers
+
+----2014-07-23 11:25:01----
+string indices must be integers
+
+----2014-07-23 12:25:01----
+string indices must be integers
+
+----2014-07-23 13:25:01----
+string indices must be integers
+
+----2014-07-23 14:25:01----
+string indices must be integers
+
+----2014-07-23 15:25:01----
+string indices must be integers
+
+----2014-07-23 16:25:01----
+string indices must be integers
+
+----2014-07-23 17:25:01----
+string indices must be integers
+
+----2014-07-23 18:25:01----
+string indices must be integers
+
+----2014-07-23 19:25:01----
+string indices must be integers
+
+----2014-07-23 20:25:01----
+string indices must be integers
+
+----2014-07-23 21:25:01----
+string indices must be integers
+
+----2014-07-23 22:25:01----
+string indices must be integers
+
+----2014-07-23 23:25:01----
+string indices must be integers
+
+----2014-07-24 00:25:01----
+string indices must be integers
+
+----2014-07-24 01:25:01----
+string indices must be integers
+
+----2014-07-24 02:25:01----
+string indices must be integers
+
+----2014-07-24 03:25:01----
+string indices must be integers
+
+----2014-07-24 04:25:01----
+string indices must be integers
+
+----2014-07-24 05:25:01----
+string indices must be integers
+
+----2014-07-24 06:25:01----
+string indices must be integers
+
+----2014-07-24 07:25:01----
+string indices must be integers
+
+----2014-07-24 08:25:01----
+string indices must be integers
+
+----2014-07-24 09:25:01----
+string indices must be integers
+
+----2014-07-24 10:25:01----
+string indices must be integers
+
+----2014-07-24 11:25:01----
+string indices must be integers
+
+----2014-07-24 12:25:01----
+string indices must be integers
+
+----2014-07-24 13:25:01----
+string indices must be integers
+
+----2014-07-24 14:25:01----
+string indices must be integers
+
+----2014-07-24 15:25:01----
+string indices must be integers
+
+----2014-07-24 16:25:01----
+string indices must be integers
+
+----2014-07-24 17:25:01----
+string indices must be integers
+
+----2014-07-24 18:25:01----
+string indices must be integers
+
+----2014-07-24 19:25:01----
+string indices must be integers
+
+----2014-07-24 20:25:01----
+string indices must be integers
+
+----2014-07-24 21:25:02----
+string indices must be integers
+
+----2014-07-24 22:25:02----
+string indices must be integers
+
+----2014-07-24 23:25:02----
+string indices must be integers
+
+----2014-07-25 00:25:02----
+string indices must be integers
+
+----2014-07-25 01:25:01----
+string indices must be integers
+
+----2014-07-25 02:25:01----
+string indices must be integers
+
+----2014-07-25 03:25:01----
+string indices must be integers
+
+----2014-07-25 04:25:01----
+string indices must be integers
+
+----2014-07-25 05:25:01----
+string indices must be integers
+
+----2014-07-25 06:25:01----
+string indices must be integers
+
+----2014-07-25 07:25:02----
+string indices must be integers
+
+----2014-07-25 08:25:02----
+string indices must be integers
+
+----2014-07-25 09:25:02----
+string indices must be integers
+
+----2014-07-25 10:25:02----
+string indices must be integers
+
+----2014-07-25 11:25:01----
+string indices must be integers
+
+----2014-07-25 12:25:01----
+string indices must be integers
+
+----2014-07-25 13:25:01----
+string indices must be integers
+
+----2014-07-25 14:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-25 15:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-25 16:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-25 17:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-25 18:25:01----
+Response:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>TypeError: 'dict' object is not callable // Werkzeug Debugger</title>
+    <link rel="stylesheet" href="?__debugger__=yes&amp;cmd=resource&amp;f=style.css" type="text/css">
+    <!-- We need to make sure this has a favicon so that the debugger does not by
+         accident trigger a request to /favicon.ico which might change the application
+         state. -->
+    <link rel="shortcut icon" href="?__debugger__=yes&amp;cmd=resource&amp;f=console.png">
+    <script type="text/javascript" src="?__debugger__=yes&amp;cmd=resource&amp;f=jquery.js"></script>
+    <script type="text/javascript" src="?__debugger__=yes&amp;cmd=resource&amp;f=debugger.js"></script>
+    <script type="text/javascript">
+      var TRACEBACK = 140347122974224,
+          CONSOLE_MODE = false,
+          EVALEX = true,
+          SECRET = "6vwUwzOFpYkQXjsi5I0i";
+    </script>
+  </head>
+  <body>
+    <div class="debugger">
+<h1>TypeError</h1>
+<div class="detail">
+  <p class="errormsg">TypeError: 'dict' object is not callable</p>
+</div>
+<h2 class="traceback">Traceback <em>(most recent call last)</em></h2>
+<div class="traceback">
+  
+  <ul><li><div class="frame" id="frame-140347122973904">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/flask/app.py"</cite>,
+      line <em class="line">1836</em>,
+      in <code class="function">__call__</code></h4>
+  <pre>return self.wsgi_app(environ, start_response)</pre>
+</div>
+
+<li><div class="frame" id="frame-140347130237520">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/flask/app.py"</cite>,
+      line <em class="line">1820</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <pre>response = self.make_response(self.handle_exception(e))</pre>
+</div>
+
+<li><div class="frame" id="frame-140347130237264">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/flask_restful/__init__.py"</cite>,
+      line <em class="line">257</em>,
+      in <code class="function">error_router</code></h4>
+  <pre>return self.handle_error(e)</pre>
+</div>
+
+<li><div class="frame" id="frame-140347130237008">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/flask/app.py"</cite>,
+      line <em class="line">1817</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <pre>response = self.full_dispatch_request()</pre>
+</div>
+
+<li><div class="frame" id="frame-140347130237200">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/flask/app.py"</cite>,
+      line <em class="line">1477</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <pre>rv = self.handle_user_exception(e)</pre>
+</div>
+
+<li><div class="frame" id="frame-140347130237904">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/flask_restful/__init__.py"</cite>,
+      line <em class="line">257</em>,
+      in <code class="function">error_router</code></h4>
+  <pre>return self.handle_error(e)</pre>
+</div>
+
+<li><div class="frame" id="frame-140347130237584">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/flask/app.py"</cite>,
+      line <em class="line">1475</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <pre>rv = self.dispatch_request()</pre>
+</div>
+
+<li><div class="frame" id="frame-140347130237776">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/flask/app.py"</cite>,
+      line <em class="line">1461</em>,
+      in <code class="function">dispatch_request</code></h4>
+  <pre>return self.view_functions[rule.endpoint](**req.view_args)</pre>
+</div>
+
+<li><div class="frame" id="frame-140347130237968">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/flask_restful/__init__.py"</cite>,
+      line <em class="line">397</em>,
+      in <code class="function">wrapper</code></h4>
+  <pre>resp = resource(*args, **kwargs)</pre>
+</div>
+
+<li><div class="frame" id="frame-140347130237648">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/flask_restful/utils/cors.py"</cite>,
+      line <em class="line">32</em>,
+      in <code class="function">wrapped_function</code></h4>
+  <pre>resp = make_response(f(*args, **kwargs))</pre>
+</div>
+
+<li><div class="frame" id="frame-140347130238032">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/flask/helpers.py"</cite>,
+      line <em class="line">183</em>,
+      in <code class="function">make_response</code></h4>
+  <pre>return current_app.make_response(args)</pre>
+</div>
+
+<li><div class="frame" id="frame-140347130237136">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/flask/app.py"</cite>,
+      line <em class="line">1577</em>,
+      in <code class="function">make_response</code></h4>
+  <pre>rv = self.response_class.force_type(rv, request.environ)</pre>
+</div>
+
+<li><div class="frame" id="frame-140347130238224">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/werkzeug/wrappers.py"</cite>,
+      line <em class="line">824</em>,
+      in <code class="function">force_type</code></h4>
+  <pre>response = BaseResponse(*_run_wsgi_app(response, environ))</pre>
+</div>
+
+<li><div class="frame" id="frame-140347130238096">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/dist-packages/werkzeug/test.py"</cite>,
+      line <em class="line">854</em>,
+      in <code class="function">run_wsgi_app</code></h4>
+  <pre>app_iter = app(environ, start_response)</pre>
+</div>
+</ul>
+  <blockquote>TypeError: 'dict' object is not callable</blockquote>
+</div>
+
+<div class="plain">
+  <form action="/?__debugger__=yes&amp;cmd=paste" method="post">
+    <p>
+      <input type="hidden" name="language" value="pytb">
+      This is the Copy/Paste friendly version of the traceback.  <span
+      class="pastemessage">You can also paste this traceback into
+      a <a href="https://gist.github.com/">gist</a>:
+      <input type="submit" value="create paste"></span>
+    </p>
+    <textarea cols="50" rows="10" name="code" readonly>Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python2.7/dist-packages/flask_restful/__init__.py", line 397, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/flask_restful/utils/cors.py", line 32, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/usr/local/lib/python2.7/dist-packages/flask/helpers.py", line 183, in make_response
+    return current_app.make_response(args)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1577, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/wrappers.py", line 824, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/test.py", line 854, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'dict' object is not callable</textarea>
+  </form>
+</div>
+<div class="explanation">
+  The debugger caught an exception in your WSGI application.  You can now
+  look at the traceback which led to the error.  <span class="nojavascript">
+  If you enable JavaScript you can also use additional features such as code
+  execution (if the evalex feature is enabled), automatic pasting of the
+  exceptions and much more.</span>
+</div>
+      <div class="footer">
+        Brought to you by <strong class="arthur">DON'T PANIC</strong>, your
+        friendly Werkzeug powered traceback interpreter.
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask_restful/__init__.py", line 257, in error_router
+    return self.handle_error(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python2.7/dist-packages/flask_restful/__init__.py", line 397, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/flask_restful/utils/cors.py", line 32, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/usr/local/lib/python2.7/dist-packages/flask/helpers.py", line 183, in make_response
+    return current_app.make_response(args)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1577, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/wrappers.py", line 824, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/test.py", line 854, in run_wsgi_app
+    app_iter = app(environ, start_response)
+TypeError: 'dict' object is not callable
+
+-->
+
+
+----2014-07-25 19:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-25 20:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-25 21:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-25 22:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-25 23:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 00:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 01:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 02:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 03:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 04:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 05:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 06:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 07:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 08:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 09:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 10:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 11:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 12:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 13:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 14:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 15:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 16:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 17:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 18:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 19:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 20:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 21:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 22:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-26 23:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 00:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 01:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 02:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 03:25:02----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 04:25:02----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 05:25:02----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 06:25:02----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 07:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 08:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 09:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 10:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 11:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 12:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 13:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 14:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 15:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 16:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 17:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 18:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 19:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 20:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 21:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 22:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-27 23:25:02----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-28 00:25:02----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-28 01:25:02----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-28 02:25:02----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-28 03:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-28 04:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-28 05:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-28 06:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-28 07:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-28 11:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-28 12:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-28 13:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-28 14:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-28 15:25:01----
+Response:{
+    "ok": 1
+}
+
+
+----2014-07-28 16:25:01----
+Response:{"ok": 1}
+
+----2014-07-28 17:25:01----
+Response:{"ok": 1}
+
+----2014-07-28 18:25:01----
+Response:{"ok": 1}
+
+----2014-07-28 19:25:01----
+Response:{"ok": 1}
+
+----2014-07-28 20:25:01----
+Response:{"ok": 1}
+
+----2014-07-28 21:25:01----
+Response:{"ok": 1}
+
+----2014-07-28 22:25:01----
+string indices must be integers
+
+----2014-07-28 23:25:01----
+string indices must be integers
+
+----2014-07-29 00:25:01----
+string indices must be integers
+
+----2014-07-29 01:25:01----
+string indices must be integers
+
+----2014-07-29 02:25:01----
+string indices must be integers
+
+----2014-07-29 03:25:02----
+Response:{"ok": 1}
+
+----2014-07-29 04:25:02----
+Response:{"ok": 1}
+
+----2014-07-29 05:25:02----
+Response:{"ok": 1}
+
+----2014-07-29 06:25:02----
+Response:{"ok": 1}
+
+----2014-07-29 07:25:01----
+Response:{"ok": 1}
+
+----2014-07-29 08:25:01----
+Response:{"ok": 1}
+
+----2014-07-29 09:25:01----
+Response:{"ok": 1}
+
+----2014-07-29 10:25:01----
+Response:{"ok": 1}
+
+----2014-07-29 11:25:01----
+Response:{"ok": 1}
+
+----2014-07-29 12:25:01----
+Response:{"ok": 1}
+
+----2014-07-29 13:25:01----
+Response:{"ok": 1}
+
+----2014-07-29 14:25:01----
+Response:{"ok": 1}
+
+----2014-07-29 15:25:01----
+Response:{"ok": 1}
+
+----2014-07-29 16:25:01----
+Response:{"ok": 1}
+
+----2014-07-29 17:25:01----
+Response:{"ok": 1}
+
+----2014-07-29 18:25:01----
+Response:{"ok": 1}
+
+----2014-07-29 19:25:01----
+Response:{"ok": 1}
+
+----2014-07-29 20:25:01----
+Response:{"ok": 1}
+
+----2014-07-29 21:25:01----
+Response:{"ok": 1}
+
+----2014-07-29 22:25:01----
+Response:{"ok": 1}
+
+----2014-07-29 23:25:02----
+Response:{"ok": 1}
+
+----2014-07-30 00:25:02----
+Response:{"ok": 1}
+
+----2014-07-30 01:25:02----
+Response:{"ok": 1}
+
+----2014-07-30 02:25:02----
+Response:{"ok": 1}
+
+----2014-07-30 03:25:01----
+Response:{"ok": 1}
+
+----2014-07-30 04:25:01----
+Response:{"ok": 1}
+
+----2014-07-30 05:25:01----
+Response:{"ok": 1}
+
+----2014-07-30 06:25:01----
+Response:{"ok": 1}
+
+----2014-07-30 07:25:01----
+Response:{"ok": 1}
+
+----2014-07-30 08:25:01----
+Response:{"ok": 1}
+
+----2014-07-30 09:25:01----
+Response:{"ok": 1}
+
+----2014-07-30 10:25:01----
+Response:{"ok": 1}
+
+----2014-07-30 11:25:01----
+Response:{"ok": 1}
+
+----2014-07-30 12:25:01----
+Response:{"ok": 1}
+
+----2014-07-30 13:25:01----
+Response:{"ok": 1}
+
+----2014-07-30 14:25:01----
+Response:{"ok": 1}
+
+----2014-07-30 15:25:01----
+Response:{"ok": 1}
+
+----2014-07-30 16:25:02----
+Response:{"ok": 1}
+
+----2014-07-30 17:25:02----
+Response:{"ok": 1}
+
+----2014-07-30 18:25:02----
+Response:{"ok": 1}
+
+----2014-07-30 19:25:01----
+Response:{"ok": 1}
+
+----2014-07-30 20:25:01----
+Response:{"ok": 1}
+
+----2014-07-30 21:25:01----
+Response:{"ok": 1}
+
+----2014-07-30 22:25:01----
+Response:{"ok": 1}
+
+----2014-07-30 23:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 00:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 01:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 02:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 03:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 04:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 05:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 06:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 07:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 08:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 09:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 10:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 11:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 12:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 13:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 14:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 15:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 16:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 17:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 18:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 19:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 20:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 21:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 22:25:01----
+Response:{"ok": 1}
+
+----2014-07-31 23:25:01----
+Response:{"ok": 1}
+
+----2014-08-01 00:25:01----
+Response:{"ok": 1}
+
+----2014-08-01 01:25:01----
+Response:{"ok": 1}
+
+----2014-08-01 02:25:01----
+Response:{"ok": 1}
+
+----2014-08-01 03:25:01----
+Response:{"ok": 1}
+
+----2014-08-01 04:25:01----
+Response:{"ok": 1}
+
+----2014-08-01 05:25:02----
+Response:{"ok": 1}
+
+----2014-08-01 06:25:02----
+Response:{"ok": 1}
+
+----2014-08-01 07:25:01----
+Response:{"ok": 1}
+
+----2014-08-01 08:25:01----
+Response:{"ok": 1}
+
+----2014-08-01 09:25:01----
+Response:{"ok": 1}
+
+----2014-08-01 10:25:01----
+Response:{"ok": 1}
+
+----2014-08-01 11:25:01----
+Response:{"ok": 1}
+
+----2014-08-01 12:25:01----
+Response:{"ok": 1}
+
+----2014-08-01 13:25:01----
+Response:{"ok": 1}
+
+----2014-08-01 14:25:01----
+Response:{"ok": 1}
+
+----2014-08-01 15:25:01----
+Response:{"ok": 1}
+
+----2014-08-01 16:25:01----
+Response:{"ok": 1}
+
+----2014-08-01 17:25:01----
+Response:{"ok": 1}
+
+----2014-08-01 18:25:01----
+Response:{"ok": 1}
+
+----2014-08-01 19:25:01----
+Response:{"ok": 1}
+
+----2014-08-01 20:25:01----
+Response:{"ok": 1}
+
+----2014-08-01 21:25:01----
+Response:{"ok": 1}
+
+----2014-08-01 22:25:01----
+Response:{"ok": 1}
+
+----2014-08-01 23:25:01----
+Response:{"ok": 1}
+
+----2014-08-02 00:25:02----
+Response:{"ok": 1}
+
+----2014-08-02 01:25:02----
+Response:{"ok": 1}
+
+----2014-08-02 02:25:02----
+Response:{"ok": 1}
+
+----2014-08-02 03:25:02----
+Response:{"ok": 1}
+
+----2014-08-02 04:25:01----
+Response:{"ok": 1}
+
+----2014-08-02 05:25:01----
+Response:{"ok": 1}
+
+----2014-08-02 06:25:01----
+Response:{"ok": 1}
+
+----2014-08-02 07:25:01----
+Response:{"ok": 1}
+
+----2014-08-02 08:25:01----
+Response:{"ok": 1}
+
+----2014-08-02 09:25:01----
+Response:{"ok": 1}
+
+----2014-08-02 10:25:01----
+Response:{"ok": 1}
+
+----2014-08-02 11:25:01----
+Response:{"ok": 1}
+
+----2014-08-02 12:25:01----
+Response:{"ok": 1}
+
+----2014-08-02 13:25:01----
+Response:{"ok": 1}
+
+----2014-08-02 14:25:01----
+Response:{"ok": 1}
+
+----2014-08-02 15:25:01----
+Response:{"ok": 1}
+
+----2014-08-02 16:25:01----
+Response:{"ok": 1}
+
+----2014-08-02 17:25:01----
+Response:{"ok": 1}
+
+----2014-08-02 18:25:01----
+Response:{"ok": 1}
+
+----2014-08-02 19:25:01----
+Response:{"ok": 1}
+
+----2014-08-02 20:25:01----
+Response:{"ok": 1}
+
+----2014-08-02 21:25:01----
+Response:{"ok": 1}
+
+----2014-08-02 22:25:01----
+Response:{"ok": 1}
+
+----2014-08-02 23:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 00:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 01:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 02:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 03:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 04:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 05:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 06:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 07:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 08:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 09:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 10:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 11:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 12:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 13:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 14:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 15:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 16:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 17:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 18:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 19:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 20:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 21:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 22:25:01----
+Response:{"ok": 1}
+
+----2014-08-03 23:25:01----
+Response:{"ok": 1}
+
+----2014-08-04 00:25:01----
+Response:{"ok": 1}
+
+----2014-08-04 01:25:02----
+Response:{"ok": 1}
+
+----2014-08-04 02:25:02----
+Response:{"ok": 1}
+
+----2014-08-04 03:25:02----
+Response:{"ok": 1}
+
+----2014-08-04 04:25:01----
+Response:{"ok": 1}
+
+----2014-08-04 05:25:01----
+Response:{"ok": 1}
+
+----2014-08-04 06:25:01----
+Response:{"ok": 1}
+
+----2014-08-04 07:25:01----
+Response:{"ok": 1}
+
+----2014-08-04 08:25:01----
+Response:{"ok": 1}
+
+----2014-08-04 09:25:01----
+Response:{"ok": 1}
+
+----2014-08-04 10:25:01----
+Response:{"ok": 1}
+
+----2014-08-04 11:25:01----
+Response:{"ok": 1}
+
+----2014-08-04 12:25:01----
+Response:{"ok": 1}
+
+----2014-08-04 13:25:01----
+Response:{"ok": 1}
+
+----2014-08-04 14:25:01----
+Response:{"ok": 1}
+
+----2014-08-04 15:25:01----
+Response:{"ok": 1}
+
+----2014-08-04 16:25:01----
+Response:{"ok": 1}
+
+----2014-08-04 17:25:01----
+Response:{"ok": 1}
+
+----2014-08-04 18:07:51----
+'location'
+
+----2014-08-04 18:08:23----
+'location'
+
+----2014-08-04 18:10:34----
