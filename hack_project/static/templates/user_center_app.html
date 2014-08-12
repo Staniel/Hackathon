@@ -1,0 +1,157 @@
+ <!-- HEADER -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>SJTU Hackathon</title>
+
+  <link href="/static/libs/css/bootstrap.min.css" rel="stylesheet">  
+  <link href="/static/css/global.css" rel="stylesheet">
+  <link href="/static/css/user_center.css" rel="stylesheet">
+
+<body ng-app="user_centerApp">
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+     <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand">Hackathon</a>
+    </div>
+     <div id="main-navbar-collapse" class="navbar-collapse collapse">
+          <ul id="main-nav-list" class="nav navbar-nav">
+            <li><a href="/#/">首 页</a></li>        
+            <li><a href="/#/document">开发文档</a></li>
+            <li><a href="/#/openapi">Open API</a></li>
+            <li><a href="/#/data">数据汇总</a></li>
+            <li><a href="/#/about">关 于</a></li>            
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a><span class="glyphicon glyphicon-user"> </span> Hello</a></li>               
+          </ul>
+     </div>
+    
+  </div>
+</nav>
+ <!-- HEADER -->
+
+  <div class="container" id="frame-container"> 
+
+ <!--NAV_BAR-->
+  <div id="side-bar"> 
+    <h2><span class="glyphicon glyphicon-home"> </span> 用户中心 </h2>    
+        <ul id="menu-list" class="nav nav-pills nav-stacked">
+
+          <li>
+            <a href="#/pandect">
+              <span class="glyphicon glyphicon-map-marker"> </span>概览
+            </a>
+          </li>
+
+          <li>
+            <a href="javascript:void(0);">
+              <span class="glyphicon glyphicon-user"> </span>我的账户
+            </a>
+          </li>
+          <div class="collapse">
+            <div class="list-group">
+              <a href="#/acc_settings" class="list-group-item">账户设置</a>
+              <a href="#/acc_chpass" class="list-group-item">修改密码</a>
+            </div>
+          </div>
+
+          <li>
+            <a href="javascript:void(0)">
+              <span class="glyphicon glyphicon-cog"> </span>设备管理
+            </a>
+          </li>
+          <div class="collapse">
+            <div class="list-group">
+              <a href="#/dev_add" class="list-group-item">添加新设备</a>
+              <a href="#/dev_manage" class="list-group-item">管理已有设备</a>
+            </div>
+          </div>
+
+          <li>
+            <a href="javascript:void(0)">
+              <span class="glyphicon glyphicon-search"> </span>数据查看
+            </a>
+          </li>
+          <div class="collapse">
+            <div class="list-group">
+              <a href="#/view_statistics" class="list-group-item">查看统计</a>
+              <a href="#/view_charts" class="list-group-item">查看图表</a>
+              <a href="#/view_raw" class="list-group-item">查看原始数据</a>
+            </div>
+          </div>
+
+          <li>
+            <a href="#/managedata">
+              <span class="glyphicon glyphicon-list-alt"> </span>数据管理
+            </a>
+          </li>
+
+          <li>
+            <a href="javascript:void(0)">
+              <span class="glyphicon glyphicon-bookmark"> </span>参考文档
+            </a>
+          </li>
+          <div class="collapse">
+            <div class="list-group">
+              <a href="#/" class="list-group-item">概述</a>
+              <a href="#/" class="list-group-item">平台使用</a>
+              <a href="#/" class="list-group-item">API参考</a>
+            </div>
+          </div>
+
+          <li>
+            <a href="#/msg">
+              <span class="glyphicon glyphicon-envelope"> </span> 站内信
+            </a>
+          </li>
+
+          <li>
+            <a href="#/about">
+              <span class="glyphicon glyphicon-leaf"> </span>关于Hackathon...
+            </a>
+          </li>
+          
+          <li>
+            <a href="/logout">
+              <span class="glyphicon glyphicon-off"> </span> 退出登录
+            </a>
+          </li>
+
+        </ul>
+  </div>
+   <!--NAV_BAR-->
+
+   <!--CONTENT VIEW -->
+  <div id="content-div" ng-view></div>
+  <!--CONTENT VIEW -->
+
+ </div>
+
+
+<div id="page-footer">
+ <p>SJTU Hackathon 2014</strong>
+    <p>©2014 上海交通大学 网络信息中心 OmniLab</p>
+    <p>Powered By Flask | MongoDB | Bootstrap</p>
+ </div> 
+
+<script src="/static/libs/js/angular/angular.min.js"></script>
+<script src="/static/libs/js/angular/angular-route.js"></script>
+<script src="/static/libs/js/jquery-2.1.1.min.js"></script>
+<script src="/static/libs/js/bootstrap.min.js"></script> 
+<script src="/static/libs/js/spin.min.js"></script>
+
+<script src="/static/js/user_center/controllers.js"></script>
+<script src="/static/js/user_center/app.js"></script>
+
+</body>
+</html>

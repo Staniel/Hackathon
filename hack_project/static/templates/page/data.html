@@ -1,0 +1,141 @@
+<link href="/static/libs/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+<script type="text/javascript">console.log("heelo");</script>
+<div class="container" style="margin-top:78px">
+
+  <div class="panel panel-primary">
+  <div class="panel-heading">数据汇总</div>
+  <div class="panel-body">    
+      
+       <label class="control-label col-md-3">数据来源<br/>(提交数据时的key)</label>
+       <div class="btn-group">
+                <button  ng-repeat="(key,value) in httpDataRenderAdapter" ng-href="#/data/{{this.key}}" ng-click="switchTo(this.key)" type="button" class="btn charts-button btn-default" ng-class="{'btn-primary':currentKey==this.key}">{{key}}</button>            
+       </div>
+       <div class="form-group" id="date-picker-form-group">
+            
+               <br/>
+                <label for="dtp_input2" class="col-md-3 control-label">查询日期起点 <br/>(UTC+0800 当日00:00)</label>
+                <div class="input-group date col-md-4" data-date="" data-link-field="dtp_input2" id="date-picker">
+                  <input id="date-picker-input" class="form-control" size="10" type="text" readonly>
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+               </div>
+                 <div class="input-group date col-md-3" data-date="" data-link-field="dtp_input2" id="date-picker"> </div>
+              <input type="hidden" id="dtp_input2" value="" /><br/>   
+               <label for="dtp_input2" class="col-md-3 control-label">查询时间跨度<br/>(单位:天)</label>  
+               <select ng-model="timeGap" class="form-control" style="width:6em">
+                  <option>1</option>
+                  <option>3</option>
+                  <option>7</option>
+                  <option>15</option>
+                  <option>30</option>
+                </select>                                     
+       </div>    
+         <label for="dtp_input2" class="col-md-3 control-label"> </label>
+         <button ng-click="doQuery()" type="button" style="width:6em;" class="btn btn-success">查询</button>      
+       
+    </div>
+  </div>
+  
+  <div class="panel panel-primary" style="min-height:300px">
+  <div class="panel-heading">查询结果</div>
+  <div class="panel-body"> 
+    <div ng-show="msg" class="alert alert-warning" role="alert">{{msg}}</div>
+    <div ng-show="subMsg" class="alert alert-info" role="alert">{{subMsg}}</div>
+    <div ng-show="currentKey=='KEEWIFI'">
+        <table class="table" ng-show="httpData.KEEWIFI">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Humidity</th>
+                    <th>Temperature</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in httpData.KEEWIFI">
+                    <td>{{item.submitted_on|TOLOCAL}}</td>
+                    <td>{{item.content.humidity||"N/A"}}</td>
+                    <td>{{item.content.temperature||"N/A"}}</td>
+                </tr>
+            </tbody>         
+
+        </table>
+    </div>
+     <div ng-show="currentKey=='KEN'">
+         <table class="table" ng-show="httpData.KEN">
+            <thead>
+                <tr>
+                    <th>Submit Time</th>
+                    <th>BOARD_TIME</th>
+                    <th>DEVICE_ID</th>
+                    <th>GPS(LAT,LNG)</th>
+                    <th>SENSOR_ID</th>
+                    <th>VALUE</th>
+                </tr>
+            </thead>
+            <tbody>
+               <tr ng-repeat-start="item in httpData.KEN">               
+                <td style="font-weight:bold" rowspan="{{item.content.DATA.length+1}}">{{item.submitted_on|TOLOCAL}}</td>   
+                <td rowspan="{{item.content.DATA.length+1}}">{{item.content.BOARD_TIME}}</td> 
+                <td rowspan="{{item.content.DATA.length+1}}">{{item.content.DEVICE_ID}}</td> 
+                <td rowspan="{{item.content.DATA.length+1}}">{{item.content.GPS.LATITUDE+","+item.content.GPS.LONGITUDE}}</td>   
+              </tr>
+              <tr ng-repeat="sensor in item.content.DATA">               
+                 <td>{{sensor.SENSOR_ID}}</td>  
+                 <td>{{sensor.VALUE.join()}}</td>                 
+              </tr>
+              <tr ng-repeat-end></tr>
+            </tbody>         
+
+        </table>
+    </div>
+     <div ng-show="currentKey=='AQICN'">
+        AQICN
+    </div>
+    <div ng-show="currentKey=='PM25'">
+      <div ng-show="httpData.PM25" class="well">
+               <label class="control-label">选择要显示的数据</label>
+               <select style="width:18em;display:inline;margin:0 2em;" ng-model="resQueryIndex" class="form-control">
+                  <option ng-repeat="item in httpData.PM25" value="{{$index}}">{{"["+$index+"]  "+(item.submitted_on|TOLOCAL)}}</option>
+                </select>              
+                <button  ng-click="httpDataRenderAdapter.PM25()" type="button" style="width:8em;" class="btn btn-primary">显示该组数据</button>  
+      </div>
+
+    </div>
+
+    <div id="mapDiv" ng-show="showMapDiv" style="height:600px"></div>
+    <div ng-show="currentKey=='PM25'">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>城市</th>
+                    <th>站点名称</th>
+                    <th>CO</th>
+                    <th>NO2</th>
+                    <th>O3</th>
+                    <th>PM2_5</th>
+                    <th>PM10</th>
+                    <th>SO2</th>
+                </tr>
+            </thead>
+            <tbody>
+
+              <tr ng-repeat-start="city in httpData.PM25[currentResDispIdx].content">               
+                <td style="font-weight:bold" rowspan="{{city.stations.length+1}}">{{city.city}}</td>   
+              </tr>
+              <tr ng-repeat="station in city.stations">               
+                 <td>{{station.name}}</td>  
+                 <td>{{station.data.CO}}</td>
+                 <td>{{station.data.NO2}}</td>
+                 <td>{{station.data.O3}}</td>
+                 <td>{{station.data.PM2_5}}</td> 
+                 <td>{{station.data.PM10}}</td>
+                 <td>{{station.data.SO2}}</td>
+              </tr>
+              <tr ng-repeat-end></tr>
+            </tbody>
+        </table>
+      </div>
+
+  </div>
+  </div>   
+
+</div>
