@@ -47,13 +47,17 @@
                     <th>Time</th>
                     <th>Humidity</th>
                     <th>Temperature</th>
+                    <th>CO2</th>
+                    <th>PM2.5</th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="item in httpData.KEEWIFI">
                     <td>{{item.submitted_on|TOLOCAL}}</td>
-                    <td>{{item.content.humidity||"N/A"}}</td>
-                    <td>{{item.content.temperature||"N/A"}}</td>
+                    <td>{{item.content.humidity}}</td>
+                    <td>{{item.content.temperature}}</td>
+                    <td>{{item.content.co2}}</td>
+                    <td>{{item.content.pm2_5}}</td>
                 </tr>
             </tbody>         
 
