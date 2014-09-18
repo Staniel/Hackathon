@@ -1567,3 +1567,19 @@ Response:{"ok": 1}
 'location'
 
 ----2014-08-04 18:10:34----
+
+----2014-09-08 16:25:43----
+string indices must be integers
+
+----2014-09-08 16:29:23----
+string indices must be integers
+
+----2014-09-10 22:08:27----
+Response:{"ok": 1}
+
+
+----2014-09-10 22:11:00----
+HTTPConnectionPool(host='www.pm25.in', port=80): Max retries exceeded with url: /api/querys/aqi_details.json?city=zhangjiajie&token=5j1znBVAsnSf5xQyNQyq (Caused by <class 'socket.error'>: [Errno 10060] )
+
+----2014-09-10 22:19:53----
+string indices must be integers
